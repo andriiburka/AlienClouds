@@ -1,14 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic,300,300italic,600,600italic);
 
-html {
-    /*background: linear-gradient(purple, black) fixed;*/
-    /*background: linear-gradient(deeppink, black) fixed;*/
-    /*background: linear-gradient(0deg, yellow, purple, black) fixed;*/
-    /*background: linear-gradient(45deg, purple, lime, deeppink) fixed;*/
-    /*background: linear-gradient(20deg, black, purple, black) fixed;*/
-    /*background: linear-gradient(purple, black) fixed;*/
-}
-
 .day {
     background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;
 }
@@ -56,7 +47,6 @@ body {
     width: 273px;
     height: 86px;
     margin: -20px auto;
-    /*background-color: crimson;*/
     color: white;
     text-align: center;
     line-height: 40px;
@@ -145,7 +135,7 @@ body {
 }
 
 
-/* GRID, COLUMNS - (PROJECT CELLS) ====================================================================*/
+/* PROJECT BLOCKS ====================================================================*/
 * {
     box-sizing: border-box;
 }
@@ -192,8 +182,6 @@ body {
 }
 
 .project-cell-block-odd {
-    /*background: #ffbe00 fixed;*/
-    /*background: #ff8400 fixed;*/
     background: #ff00c7 fixed;
     float: left;
     width: 31%;
