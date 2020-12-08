@@ -11,12 +11,10 @@ html {
 
 .day {
     background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;
-    border-radius: 50% !important;
 }
 
 .night {
     background: linear-gradient(50rad, darkred, orangered, black, black, black) fixed;
-    border-radius: 50% !important;
 }
 
 body {
