@@ -1,0 +1,76 @@
+{% load static %}
+
+<div class="contacts-cell" style="text-align: center">
+    <form method="POST" action="" class='form'>
+        {% csrf_token %}
+
+        <div class='control' style="text-align: center; padding-top: 15px">
+            <h2 class="h2-pink-shadow">Registration</h2>
+            {#        <a style="padding-left: 3%" href="{% url 'index' %}">#}
+            {#            <img src="{% static 'img/logo.png' %}"/>#}
+            {#        </a>#}
+        </div>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <div class='control block-cube block-input'>
+            {{ form.username }}
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <div class='control block-cube block-input'>
+            {{ form.password1 }}
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <div class='control block-cube block-input'>
+            {{ form.password2 }}
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <button class='btn block-cube block-cube-hover' type='submit'>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='login_button_text'>Register</div>
+        </button>
+        <br>
+        <p class="subtitle">Already have an account? <a href='{% url 'login' %}'>Login</a></p>
+    </form>
+</div>

@@ -1,0 +1,131 @@
+{% load static %}
+{% load tags %}
+
+<!DOCTYPE html>
+<html lang="en" class="{% bg_day_or_night request %}">
+<head>
+    <title>{% block title %}ALIENCLOUDS{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/css/uikit.min.css'>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'css/cubes.css' %}">
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" >
+
+
+    <style>
+        .color-user {
+            color: royalblue !important;
+            font-weight: 900;
+        }
+        .color-superuser {
+            color: red !important;
+            font-weight: 900;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<header>
+    {% block header %}
+        <div class="sticky-menu" data-uk-sticky="{top:-200, animation: 'uk-animation-slide-top'}">
+            <nav class="main-navbar">
+                <a href="#main-offcanvas" class="main-navbar__mobile-btn uk-icon-bars uk-visible-small"
+                   data-uk-offcanvas></a>
+                <a href="{% url 'index' %}" class="main-navbar__logo"><img src="{% static 'img/logo.png' %}" alt=""></a>
+                <a href="#search-modal" class="main-navbar__search-btn uk-icon-search" data-uk-modal></a>
+                <ul class="main-navbar__nav uk-hidden-small">
+                    <li><a href="{% url 'all projects' %}">projects</a></li>
+                    <li><a href="{% url 'blog' %}">Blog</a></li>
+                    <li><a href="{% url 'contacts' %}">contacts</a></li>
+                    <li><a href="{% url 'upload' %}">Upload</a></li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+
+                    {% if request.user.is_authenticated %}
+                        {% if user.is_superuser %}
+                            <li><a class="color-superuser" href="{% url 'admin:index' %}">{% firstof user.get_short_name user.get_username %}</a>|<a href="{% url 'logout' %}">LOGOUT</a></li>
+                        {% else %}
+                            <li><a class="color-user" href="{% url 'upload' %}">{% firstof user.get_short_name user.get_username %}</a>|<a href="{% url 'logout' %}">LOGOUT</a></li>
+                        {% endif %}
+                    {% else %}
+                        <li><a href="{% url 'login' %}">LOGIN</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    {% endblock %}
+
+
+    <section>
+        {% block section %}
+
+        {% endblock %}
+    </section>
+
+</header>
+
+{#<section style="height: 100vh"></section>#}
+
+<!-- page components -->
+<div id="search-modal" class="uk-modal">
+    <div class="uk-modal-dialog">
+        <form action="" class="uk-form">
+            <div class="uk-form-icon uk-width-1-1">
+                <i class="uk-icon-search"></i>
+                <input type="text" class="uk-width-1-1 uk-form-large" autofocus
+                       placeholder="What are you looking for?"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!--RESPONSIVE MENU - MOBILE-->
+<div id="main-offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <div class="uk-panel"><h3 class="uk-contrast">Projects</h3></div>
+        <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
+            <li><a href="{% url 'all projects' %}">Projects</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="{% url 'contacts' %}">contacts</a></li>
+            <li><a href="{% url 'upload' %}">Upload</a></li>
+
+            {% if request.user.is_authenticated %}
+                <li><a href="{% url 'admin:index' %}"
+                       style="color: #d43f3a">{% firstof user.get_short_name user.get_username %}</a><a
+                        href="{% url 'logout' %}">LOGOUT</a></li>
+            {% else %}
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
+            {% endif %}
+
+        </ul>
+    </div>
+</div>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/uikit.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/components/sticky.min.js'></script>
+<script src="{% static 'js/placeholders.js' %}"></script>
+
+<!--Messenger widget-->
+{#<script src="https://apps.elfsight.com/p/platform.js" defer></script>#}
+{#<div class="elfsight-app-3f164812-4b65-46b8-96d3-3f1eb2d4f6d0"></div>#}
+
+</body>
+<footer>
+    {% block footer %}
+
+        <div style="display: none">
+            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+            <div style="text-align: center; background: #d43f3a; color: #85ff58"
+                 class="elfsight-app-bc452628-a87c-4b01-944e-7700afc46401"></div>
+        </div>
+
+    {% endblock %}
+</footer>
+</html>

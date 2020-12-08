@@ -1,0 +1,16 @@
+{% extends 'shared/base.html' %}
+
+{% block title %}{{ projects_title }}{% endblock %}
+
+{% block section %}
+    <div class="div-projects-block">
+        <h2 class="h2-pink-shadow">The cells in this grid table view are equal to the number of registered users.</h2>
+
+        {% for project in projects %}
+            <div class="project-cell-block-{% cycle 'even' 'odd' %}">
+                <p style="text-align: center">{{ project.project_title }}</p>
+            </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load tags %}
+
+{% block title %}{{ index_title }}{% endblock %}
+
+{% block section %}
+    <style>
+        .welcome-block {
+            text-align: center;
+            padding-top: 250px;
+            color: #096dcc;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        {#width: 50%;#}
+
+        }
+
+        .welcome-block h2 {
+            text-shadow: 3px 0 4px black;
+            line-height: 55px;
+        }
+
+    </style>
+
+
+    <div class="welcome-block">
+        <div class="wrapper">
+            <div class="cube">
+                <div class="side side--back">
+                    <span class='dot'></span>
+                </div>
+                <div class="side side--top">
+                    <span class='dot'></span>
+                </div>
+                <div class="side side--bottom">
+                    <span class='dot'></span>
+                </div>
+                <div class="side side--left">
+                    <span class='dot'></span>
+                </div>
+                <div class="side side--right">
+                    <span class='dot'></span>
+                </div>
+                <div class="side side--front">
+                    <span class='dot'></span>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="base_title">{% welcome_message request %}</h2>
+
+        {% if count_users > 0 %}
+            <p><a style="color: yellow">{{ count_users }}</a> Registered
+                <script type="text/javascript" src="//rf.revolvermaps.com/0/0/9.js?i=5f3cvj125bh&amp;t=users"
+                        async="async"></script>.
+            </p>
+        {% else %}
+            <p id="sf-mono-ultralight">No users registered yet</p>
+        {% endif %}
+
+    </div>
+{% endblock %}

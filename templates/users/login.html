@@ -1,0 +1,9 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block title %}{{ login_title }}{% endblock %}
+
+{% block section %}
+    {% include 'partials/users/login-form.html' %}
+{% endblock %}
+

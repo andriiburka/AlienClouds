@@ -1,0 +1,29 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block title %}User Profile | ALIENCLOUDS{% endblock %}
+
+
+{% block section %}
+    <style>
+        #main-div-profile{
+            margin-left: 10%;
+            margin-right: 10%;
+            padding-top: 10%;
+        }
+
+        #welcome-after-login, #welcome-description-after-login{
+            color: whitesmoke;
+        }
+
+    </style>
+
+    <div id="main-div-profile">
+        <h1 id="welcome-after-login">Welcome, {% firstof user.get_short_name user.get_username %}!</h1>
+        <h3 id="welcome-description-after-login">  This will be your 'USER PROFILE' when you should see the content you upload.</h3>
+    </div>
+
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

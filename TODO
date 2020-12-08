@@ -1,0 +1,9 @@
+#TODO on Projects page (columns)
+class="is-{% cycle 'odd' 'even' %}"
+.is-odd{
+    background-color: purple;
+}
+.is-even{
+    background-color: grey;
+}
+

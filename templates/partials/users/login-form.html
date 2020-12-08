@@ -1,0 +1,67 @@
+{% load static %}
+
+<div class="div-form">
+    <form method="POST" action="" autocomplete='off' class='form' id="login-form">
+        {% csrf_token %}
+
+        <div class='control' style="text-align: center; padding-top: 15px">
+
+            <style>
+                .logo-padding-left {
+                    padding-left: 3%;
+                }
+            </style>
+
+            <h2 class="h2-pink-shadow">Login</h2>
+            {#                <a class="logo-padding-left" href="{% url 'index' %}">#}
+            {#                    <img src="{% static 'img/logo.png' %}" alt=""/>#}
+            {#                </a>#}
+
+        </div>
+
+        {% for msg in messages %}
+            <p style="font-size: 14px">{{ msg }}</p>
+        {% endfor %}
+
+        <div class='control block-cube block-input'>
+            <input name='username' placeholder='Username' type='text'>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <div class='control block-cube block-input'>
+            <input name='password' placeholder='Password' type='password'>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <button class='btn block-cube block-cube-hover' type='submit'>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='login_button_text'>Bam!</div>
+        </button>
+        <br>
+        <p class="subtitle">Don't have an account? <a href='{% url 'register' %}'>Register</a></p>
+    </form>
+</div>
