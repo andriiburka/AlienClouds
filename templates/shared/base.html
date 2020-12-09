@@ -105,12 +105,11 @@
                 {% if user.is_superuser %}
                     <li><a class="color-user"
                            href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
-                    <li><a class="color-superuser" href="{% url 'admin:index' %}">Admin</a>|<a
-                            href="{% url 'logout' %}">Logout</a></li>
+                    <li><a class="color-superuser" href="{% url 'admin:index' %}">Admin</a></li>
+                    <li><a href="{% url 'logout' %}">Logout</a></li>
                 {% else %}
-                    <li><a class="color-user"
-                           href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
-                        <a href="{% url 'logout' %}">LOGOUT</a></li>
+                    <li><a class="color-user" href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a></li>
+                    <li><a href="{% url 'logout' %}">LOGOUT</a></li>
                 {% endif %}
 
             {% else %}
