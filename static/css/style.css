@@ -178,7 +178,7 @@ body {
 }
 
 .project-cell-block-even {
-    background: rebeccapurple fixed;
+    background: rgba(102, 51, 153, .6)  fixed;
     float: left;
     width: 31%;
     padding: 1px;
@@ -187,7 +187,7 @@ body {
 }
 
 .project-cell-block-odd {
-    background: #ff00c7 fixed;
+    background: rgba(255, 0, 199, .3) fixed;
     float: left;
     width: 31%;
     padding: 1px;
