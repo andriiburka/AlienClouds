@@ -18,6 +18,16 @@
     src: url(../fonts/Sansation-Regular.ttf);
 }
 
+.color-user {
+    color: #00a6ff !important;
+    font-weight: 900;
+}
+
+.color-superuser {
+    color: #ff0dae !important;
+    font-weight: 900;
+}
+
 .form {
     font-family: sf_pro_display-ultralight, sans-serif;
     font-size: 16px !important;

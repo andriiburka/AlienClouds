@@ -13,24 +13,10 @@
     <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
     <link rel="stylesheet" href="{% static 'css/cubes.css' %}">
     <!-- Favicon icon -->
-    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" >
-
-
-    <style>
-        .color-user {
-            color: royalblue !important;
-            font-weight: 900;
-        }
-        .color-superuser {
-            color: red !important;
-            font-weight: 900;
-        }
-    </style>
-
-
+    <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
 </head>
-<body>
 
+<body>
 <header>
     {% block header %}
         <div class="sticky-menu" data-uk-sticky="{top:-200, animation: 'uk-animation-slide-top'}">
@@ -43,20 +29,25 @@
 
                     <li><a href="{% url 'all projects' %}">projects</a></li>
 
-{#                    <li><a href="{% url 'blog' %}">Blog</a></li>#}
-{#                    <li><a href="{% url 'contacts' %}">Join us</a></li>#}
+                    {#                    <li><a href="{% url 'blog' %}">Blog</a></li>#}
+                    {#                    <li><a href="{% url 'contacts' %}">Join us</a></li>#}
 
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
                     {% if request.user.is_authenticated %}
-                        <li><a href="{% url 'upload' %}">Upload</a></li>
                         {% if user.is_superuser %}
-                            <li><a class="color-superuser" href="{% url 'admin:index' %}">{% firstof user.get_short_name user.get_username %}</a>|<a href="{% url 'logout' %}">LOGOUT</a></li>
+                            <li><a class="color-user"
+                                   href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
+                            <li><a class="color-superuser" href="{% url 'admin:index' %}">Admin</a>|<a
+                                    href="{% url 'logout' %}">Logout</a></li>
                         {% else %}
-                            <li><a class="color-user" href="{% url 'upload' %}">{% firstof user.get_short_name user.get_username %}</a>|<a href="{% url 'logout' %}">LOGOUT</a></li>
+                            <li><a class="color-user"
+                                   href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>|<a
+                                    href="{% url 'logout' %}">Logout</a></li>
                         {% endif %}
+
                     {% else %}
-                        <li><a href="{% url 'login' %}">LOGIN</a></li>
+                        <li><a href="{% url 'login' %}">Login</a></li>
                     {% endif %}
                 </ul>
             </nav>
@@ -71,8 +62,6 @@
     </section>
 
 </header>
-
-{#<section style="height: 100vh"></section>#}
 
 <!-- page components -->
 <div id="search-modal" class="uk-modal">
@@ -91,21 +80,42 @@
 <!--RESPONSIVE MENU - MOBILE-->
 <div id="main-offcanvas" class="uk-offcanvas">
     <div class="uk-offcanvas-bar">
-        <div class="uk-panel"><h3 class="uk-contrast">Projects</h3></div>
+        <div class="uk-panel"><h3 class="uk-contrast">Categories</h3></div>
         <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
-            <li><a href="{% url 'all projects' %}">Projects</a></li>
-            <li><a href="{% url 'blog' %}">Blog</a></li>
-            <li><a href="{% url 'contacts' %}">contacts</a></li>
-            <li><a href="{% url 'upload' %}">Upload</a></li>
+            {#            <li><a href="{% url 'all projects' %}">Projects</a></li>#}
+            {#            <li><a href="{% url 'blog' %}">Blog</a></li>#}
+            {#            <li><a href="{% url 'contacts' %}">contacts</a></li>#}
+            {#            <li><a href="{% url 'upload' %}">Upload</a></li>#}
+            {##}
+            {#            {% if request.user.is_authenticated %}#}
+            {#                <li><a href="{% url 'admin:index' %}"#}
+            {#                       style="color: #d43f3a">{% firstof user.get_short_name user.get_username %}</a><a#}
+            {#                        href="{% url 'logout' %}">LOGOUT</a></li>#}
+            {#            {% else %}#}
+            {#                <li><a href="{% url 'login' %}">LOGIN</a></li>#}
+            {#            {% endif %}#}
+            <li><a href="{% url 'all projects' %}">projects</a></li>
+
+            {#                    <li><a href="{% url 'blog' %}">Blog</a></li>#}
+            {#                    <li><a href="{% url 'contacts' %}">Join us</a></li>#}
+
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
             {% if request.user.is_authenticated %}
-                <li><a href="{% url 'admin:index' %}"
-                       style="color: #d43f3a">{% firstof user.get_short_name user.get_username %}</a><a
-                        href="{% url 'logout' %}">LOGOUT</a></li>
-            {% else %}
-                <li><a href="{% url 'login' %}">LOGIN</a></li>
-            {% endif %}
+                {% if user.is_superuser %}
+                    <li><a class="color-user"
+                           href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
+                    <li><a class="color-superuser" href="{% url 'admin:index' %}">Admin</a>|<a
+                            href="{% url 'logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a class="color-user"
+                           href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
+                        <a href="{% url 'logout' %}">LOGOUT</a></li>
+                {% endif %}
 
+            {% else %}
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
         </ul>
     </div>
 </div>
