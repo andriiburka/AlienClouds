@@ -40,15 +40,21 @@
                 <a href="{% url 'index' %}" class="main-navbar__logo"><img src="{% static 'img/logo.png' %}" alt=""></a>
                 <a href="#search-modal" class="main-navbar__search-btn uk-icon-search" data-uk-modal></a>
                 <ul class="main-navbar__nav uk-hidden-small">
+
                     <li><a href="{% url 'all projects' %}">projects</a></li>
-                    <li><a href="{% url 'blog' %}">Blog</a></li>
-                    <li><a href="{% url 'contacts' %}">contacts</a></li>
-                    <li><a href="{% url 'upload' %}">Upload</a></li>
+
+{#                    <li><a href="{% url 'blog' %}">Blog</a></li>#}
+{#                    <li><a href="{% url 'contacts' %}">Join us</a></li>#}
+
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
                     {% if request.user.is_authenticated %}
                         {% if user.is_superuser %}
+
+                            <li><a href="{% url 'upload' %}">Upload</a></li>
+
                             <li><a class="color-superuser" href="{% url 'admin:index' %}">{% firstof user.get_short_name user.get_username %}</a>|<a href="{% url 'logout' %}">LOGOUT</a></li>
+
                         {% else %}
                             <li><a class="color-user" href="{% url 'upload' %}">{% firstof user.get_short_name user.get_username %}</a>|<a href="{% url 'logout' %}">LOGOUT</a></li>
                         {% endif %}

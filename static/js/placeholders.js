@@ -1,4 +1,6 @@
-/* PLACEHOLDERS */
+
+// PLACEHOLDERS
+//
 const form_fields = document.getElementsByTagName('input');
 
 form_fields[1].placeholder = 'Username:';

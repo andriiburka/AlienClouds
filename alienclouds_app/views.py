@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.views.generic import ListView
-from .models.project import *
+
 
 # Inherits the class UserCreationForm but now it has an email form
 from .forms import CreateUserForm  # CMD+Click to visit this class
@@ -109,24 +109,3 @@ def logoutUser(request):
     return redirect('index')
 
 
-#
-#
-#  ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
-#  ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝██╔════╝
-#  ██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   ███████╗
-#  ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   ╚════██║
-#  ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   ███████║
-#  ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
-
-
-def all_projects(request):
-    context = {
-        'projects_title': 'Projects | ALIENCLOUDS',
-        'projects': Project.objects.all(),
-    }
-    return render(request, 'pages/projects.html', context)
-
-
-@login_required(login_url='login')
-def upload(request):
-    return render(request, 'pages/upload.html')

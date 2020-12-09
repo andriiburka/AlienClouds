@@ -1,7 +1,7 @@
 
 [![homepage][1]][2]
 
-[1]:  demo-day.png
+[1]:  static/img/readme_images/demo-day.png
 [2]:  https://alienclouds.herokuapp.com "Heroku hosted AlienClouds App"
 
 - [x] logging
