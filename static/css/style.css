@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic,300,300italic,600,600italic);
 
+/* overwriting uikit.min.css:2:1111 */
+address, blockquote, dl, fieldset, figure, ol, p, pre, ul {
+    margin: 0 0 0 0;
+}
+
 .day {
     background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;
 }
@@ -177,7 +182,7 @@ body {
     float: left;
     width: 31%;
     padding: 1px;
-    height: 400px;
+    height: 550px;
     margin: 5px;
 }
 
@@ -186,7 +191,7 @@ body {
     float: left;
     width: 31%;
     padding: 1px;
-    height: 400px;
+    height: 550px;
     margin: 5px;
 }
 
@@ -200,7 +205,7 @@ body {
         float: left;
         width: 48%;
         padding: 1px;
-        height: 400px;
+        height: 550px;
         margin: 5px;
     }
 
@@ -208,7 +213,7 @@ body {
         float: left;
         width: 48%;
         padding: 1px;
-        height: 400px;
+        height: 550px;
         margin: 5px;
     }
 }
@@ -370,8 +375,8 @@ form {
     /*background: linear-gradient(90deg, rgb(157, 85, 82) 0%, rgb(48, 15, 88) 37%, rgb(183, 3, 234) 94%);*/
 
     /* WARNING LINE */
-    background: rgb(255,248,0);
-    background: linear-gradient(55deg, rgba(255,248,0,1) 6%, rgba(0,0,0,1) 7%, rgba(0,0,0,1) 24%, rgba(255,248,0,1) 25%, rgba(255,248,0,1) 40%, rgba(0,0,0,1) 41%, rgba(0,0,0,1) 58%, rgba(255,248,0,1) 59%, rgba(255,248,0,1) 74%, rgba(0,0,0,1) 75%, rgba(0,0,0,1) 92%, rgba(255,248,0,1) 93%);
+    background: rgb(255, 248, 0);
+    background: linear-gradient(55deg, rgba(255, 248, 0, 1) 6%, rgba(0, 0, 0, 1) 7%, rgba(0, 0, 0, 1) 24%, rgba(255, 248, 0, 1) 25%, rgba(255, 248, 0, 1) 40%, rgba(0, 0, 0, 1) 41%, rgba(0, 0, 0, 1) 58%, rgba(255, 248, 0, 1) 59%, rgba(255, 248, 0, 1) 74%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 92%, rgba(255, 248, 0, 1) 93%);
 
     /* gradient: purple - black */
     /*background: rgb(255, 187, 252);*/

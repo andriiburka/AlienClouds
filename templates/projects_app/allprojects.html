@@ -1,0 +1,63 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load tags %}
+
+{% block title %}{{ projects_title }}{% endblock %}
+
+{% block section %}
+    <style>
+        .center {
+            text-align: center
+        }
+
+
+        .pic {
+            max-height: 350px;
+        }
+
+
+        .project_title {
+            font-family: sf_pro_display-ultralight, Helvetica, sans-serif;
+            font-size: 20px;
+            text-shadow: 4px 0 4px black;
+            line-height: 55px;
+            text-align: center;
+            color: white;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+
+        .description {
+            margin-top: 25px;
+            min-height: 100px;
+        }
+    </style>
+
+    <div class="div-projects-block">
+        <h2 class="h2-pink-shadow">Projects</h2>
+        <div>
+            <p class="project_title">{{ project.title }}</p>
+        </div>
+
+        {% for project in projects %}
+            <div class="project-cell-block-{% cycle 'even' 'odd' %} center">
+
+                <div>
+                    <p class="project_title">{{ project.title | upper }}</p>
+                </div>
+
+
+                <a href="{% url 'project_details' %}">
+                    <img class="pic" src="{{ project.image.url }}" alt="{{ project.title }}"></a>
+
+                <div class="description">
+                    <span>{{ project.description }}</span>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

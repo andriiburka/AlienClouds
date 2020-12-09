@@ -22,7 +22,7 @@ def all_projects(request):
         'projects': Project.objects.all(),
         'images': Project.image,
     }
-    return render(request, 'pages/allprojects.html', context)
+    return render(request, 'projects_app/allprojects.html', context)
 
 
 @login_required(login_url='login')
