@@ -37,12 +37,12 @@
                     {% if request.user.is_authenticated %}
                         {% if user.is_superuser %}
                             <li><a class="color-user"
-                                   href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
+                                   href="{% url 'myprofile' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
                             <li><a class="color-superuser" href="{% url 'admin:index' %}">Admin</a>|<a
                                     href="{% url 'logout' %}">Logout</a></li>
                         {% else %}
                             <li><a class="color-user"
-                                   href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>|<a
+                                   href="{% url 'myprofile' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>|<a
                                     href="{% url 'logout' %}">Logout</a></li>
                         {% endif %}
 
@@ -80,17 +80,20 @@
 <!--RESPONSIVE MENU - MOBILE-->
 <div id="main-offcanvas" class="uk-offcanvas">
     <div class="uk-offcanvas-bar">
-        <div class="uk-panel"><h3 class="uk-contrast">
-            <a class="color-user" href="{% url 'upload' %}">
+        <div class="uk-panel">
+            <h3 class="uk-contrast">
+                <a class="color-user" href="{% url 'myprofile' %}">
 
-                {% if request.user.is_authenticated %}
-                    Welcome, {% firstof user.get_short_name user.get_username %}!
-                {% else %}
-                    <a href="{% url 'login' %}">You're not logged in.</a>
-                {% endif %}
+                    {% if request.user.is_authenticated %}
+                        Welcome, {% firstof user.get_short_name user.get_username %}!
+                    {% else %}
+                        <a href="{% url 'login' %}">You're not logged in.</a>
+                    {% endif %}
 
-            </a>
-        </h3></div>
+                </a>
+            </h3>
+        </div>
+
         <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
 
             {% if request.user.is_authenticated %}
@@ -117,10 +120,6 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/uikit.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/components/sticky.min.js'></script>
 <script src="{% static 'js/placeholders.js' %}"></script>
-
-<!--Messenger widget-->
-<script src="https://apps.elfsight.com/p/platform.js" defer></script>
-<div class="elfsight-app-3f164812-4b65-46b8-96d3-3f1eb2d4f6d0"></div>
 
 </body>
 

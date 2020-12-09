@@ -4,6 +4,7 @@ from django.shortcuts import render
 # Create your views here.
 from .models.project import *
 
+
 #
 #
 #  ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
@@ -23,5 +24,5 @@ def all_projects(request):
 
 
 @login_required(login_url='login')
-def upload(request):
-    return render(request, 'pages/upload.html')
+def my_profile(request):
+    return render(request, 'users/my-profile.html')
