@@ -49,12 +49,9 @@
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
                     {% if request.user.is_authenticated %}
+                        <li><a href="{% url 'upload' %}">Upload</a></li>
                         {% if user.is_superuser %}
-
-                            <li><a href="{% url 'upload' %}">Upload</a></li>
-
                             <li><a class="color-superuser" href="{% url 'admin:index' %}">{% firstof user.get_short_name user.get_username %}</a>|<a href="{% url 'logout' %}">LOGOUT</a></li>
-
                         {% else %}
                             <li><a class="color-user" href="{% url 'upload' %}">{% firstof user.get_short_name user.get_username %}</a>|<a href="{% url 'logout' %}">LOGOUT</a></li>
                         {% endif %}
