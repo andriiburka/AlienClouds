@@ -22,5 +22,5 @@
 
 - [x] responsive design
 
-<img src="static/img/readme_images/responsive.PNG" alt="responsive1" width="500">
+<img src="static/img/readme_images/responsive.PNG" alt="responsive1" width="300">
 
