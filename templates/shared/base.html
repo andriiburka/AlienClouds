@@ -80,44 +80,38 @@
 <!--RESPONSIVE MENU - MOBILE-->
 <div id="main-offcanvas" class="uk-offcanvas">
     <div class="uk-offcanvas-bar">
-        <div class="uk-panel"><h3 class="uk-contrast">Categories</h3></div>
+        <div class="uk-panel"><h3 class="uk-contrast">
+            <a class="color-user" href="{% url 'upload' %}">
+
+                {% if request.user.is_authenticated %}
+                    Welcome, {% firstof user.get_short_name user.get_username %}!
+                {% else %}
+                    <a href="{% url 'login' %}">You're not logged in.</a>
+                {% endif %}
+
+            </a>
+        </h3></div>
         <ul class="uk-nav uk-nav-offcanvas" data-uk-nav>
-            {#            <li><a href="{% url 'all projects' %}">Projects</a></li>#}
-            {#            <li><a href="{% url 'blog' %}">Blog</a></li>#}
-            {#            <li><a href="{% url 'contacts' %}">contacts</a></li>#}
-            {#            <li><a href="{% url 'upload' %}">Upload</a></li>#}
-            {##}
-            {#            {% if request.user.is_authenticated %}#}
-            {#                <li><a href="{% url 'admin:index' %}"#}
-            {#                       style="color: #d43f3a">{% firstof user.get_short_name user.get_username %}</a><a#}
-            {#                        href="{% url 'logout' %}">LOGOUT</a></li>#}
-            {#            {% else %}#}
-            {#                <li><a href="{% url 'login' %}">LOGIN</a></li>#}
-            {#            {% endif %}#}
-            <li><a href="{% url 'all projects' %}">projects</a></li>
-
-            {#                    <li><a href="{% url 'blog' %}">Blog</a></li>#}
-            {#                    <li><a href="{% url 'contacts' %}">Join us</a></li>#}
-
-            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
             {% if request.user.is_authenticated %}
                 {% if user.is_superuser %}
-                    <li><a class="color-user"
-                           href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
-                    <li><a class="color-superuser" href="{% url 'admin:index' %}">Admin</a></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
+
+                    <li><a class="color-superuser" href="{% url 'admin:index' %}">Admin Panel</a></li>
+                    <li><a href="{% url 'logout' %}">LOGOUT</a></li>
                 {% else %}
-                    <li><a class="color-user" href="{% url 'upload' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a></li>
+
                     <li><a href="{% url 'logout' %}">LOGOUT</a></li>
                 {% endif %}
 
             {% else %}
-                <li><a href="{% url 'login' %}">Login</a></li>
+                <li><a href="{% url 'login' %}">LOGIN</a></li>
             {% endif %}
+            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+            <li><a href="{% url 'all projects' %}">PROJECTS</a></li>
         </ul>
     </div>
 </div>
+
 <!-- partial -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/uikit.min.js'></script>
@@ -125,10 +119,11 @@
 <script src="{% static 'js/placeholders.js' %}"></script>
 
 <!--Messenger widget-->
-{#<script src="https://apps.elfsight.com/p/platform.js" defer></script>#}
-{#<div class="elfsight-app-3f164812-4b65-46b8-96d3-3f1eb2d4f6d0"></div>#}
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-3f164812-4b65-46b8-96d3-3f1eb2d4f6d0"></div>
 
 </body>
+
 <footer>
     {% block footer %}
 
