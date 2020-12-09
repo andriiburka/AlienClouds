@@ -22,7 +22,6 @@
 
 - [x] responsive design
 
-![GitHub Logo](static/img/readme_images/responsive.PNG)
+![responsive1](./static/img/readme_images/responsive.PNG =1792x)
 
-![GitHub Logo](static/img/readme_images/responsive2.png)
-![GitHub Logo](static/img/readme_images/responsive3.png)
+
