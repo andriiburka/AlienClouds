@@ -19,6 +19,18 @@
             text-shadow: 3px 0 4px black;
             line-height: 55px;
         }
+
+        /* overwrites uikit.min.css:2:210 */
+        .uk-link, a {
+            color: white;
+            text-decoration: none;
+            cursor: default;
+        }
+
+        .uk-link:hover, a:hover {
+            color: white;
+            text-decoration: none;
+        }
     </style>
 
 
@@ -45,18 +57,20 @@
                 </div>
             </div>
         </div>
-
         <h2 class="base_title">{% welcome_message request %}</h2>
-
-        {% if count_users > 0 %}
-            <p><a style="color: yellow">{{ count_users }}</a> Registered
-                <script type="text/javascript" src="//rf.revolvermaps.com/0/0/9.js?i=5f3cvj125bh&amp;t=users"
-                        async="async"></script>
-                .
-            </p>
-        {% else %}
-            <p id="sf-mono-ultralight">No users registered yet</p>
-        {% endif %}
-
     </div>
+
+    {% block footer %}
+        <div class="footer">
+            {% if count_users > 0 %}
+                <p><a style="color: white">{{ count_users }}</a> Registered
+                    <script type="text/javascript" src="//rf.revolvermaps.com/0/0/9.js?i=5f3cvj125bh&amp;t=users"
+                            async="async"></script></p>
+            {% else %}
+                <p id="sf-mono-ultralight">No users registered yet</p>
+            {% endif %}
+        </div>
+    {% endblock %}
+
 {% endblock %}
+

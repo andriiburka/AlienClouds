@@ -41,10 +41,10 @@
                                    href="{% url 'upload_project' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>|<a
                                     href="{% url 'logout' %}">Logout</a></li>
                         {% endif %}
-
                     {% else %}
                         <li><a href="{% url 'login' %}">Login</a></li>
                     {% endif %}
+
                 </ul>
             </nav>
         </div>
@@ -52,11 +52,9 @@
 </header>
 
 
-
 <section>
     {% block section %}{% endblock %}
 </section>
-
 
 
 <!-- page components -->
@@ -117,18 +115,6 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/components/sticky.min.js'></script>
 
 {% block script %}{% endblock %}
-
+{% block footer %}{% endblock %}
 </body>
-
-<footer>
-    {% block footer %}
-
-        <div style="display: none">
-            <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-            <div style="text-align: center; background: #d43f3a; color: #85ff58"
-                 class="elfsight-app-bc452628-a87c-4b01-944e-7700afc46401"></div>
-        </div>
-
-    {% endblock %}
-</footer>
 </html>

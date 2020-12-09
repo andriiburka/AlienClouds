@@ -178,7 +178,7 @@ body {
 }
 
 .project-cell-block-even {
-    background: rgba(102, 51, 153, .6)  fixed;
+    background: rgba(102, 51, 153, .6) fixed;
     float: left;
     width: 31%;
     padding: 1px;
@@ -459,4 +459,14 @@ form {
 
 .credits a:hover {
     opacity: 1;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: white;
+    text-align: center;
 }

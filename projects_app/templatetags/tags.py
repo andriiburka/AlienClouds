@@ -23,5 +23,5 @@ def welcome_message(request):
     elif 18 <= current_hour < 22:
         msg = 'Good evening and welcome to my exam project!'
     else:
-        msg = '{first}\n{second}'.format(first='IT\'S TOO LATE!', second='Why Doncho sleep?' )
+        msg = "Night. Time to sleep."
     return msg
