@@ -1,8 +1,6 @@
 {% extends 'shared/base.html' %}
 
-{% block title %}
-    {{ title }}
-{% endblock %}
+{% block title %}{{ title }}{% endblock %}
 
 {% block section %}
     <style>
@@ -14,9 +12,8 @@
     </style>
 
     <div id="index_class_view_div">
-        {% for u in class_users %}
-{#            <p>{{ u.get_username }}</p>#}
-            <p>{% firstof u.get_short_name u.get_username %}</p>
+        {% for user in class_users %}
+            <p>{% firstof user.get_short_name user.get_username %}</p>
         {% endfor %}
     </div>
 

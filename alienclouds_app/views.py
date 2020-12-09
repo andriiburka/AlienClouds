@@ -41,11 +41,6 @@ class IndexListView(ListView):
         return context_dict
 
 
-def blog(request):
-    context = {}
-    return render(request, 'pages/blog.html', context)
-
-
 def contacts(request):
     alienclouds = '<iframe style="padding-top: 50px; text-align: center; width: 350px; height: 500px" src="https://discord.com/widget?id=780048729037340673&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>'
     softuni_pythhon_path = '<iframe style="padding-top: 50px; text-align: center; width: 350px; height: 500px" src="https://discord.com/widget?id=699289734282739732&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>'

@@ -22,19 +22,20 @@ def all_projects(request):
         'projects': Project.objects.all(),
         'images': Project.image,
     }
-    return render(request, 'pages/projects.html', context)
+    return render(request, 'pages/allprojects.html', context)
 
 
 @login_required(login_url='login')
-def my_profile(request):
-    return render(request, 'users/my-profile.html')
-
-
-def project(request):
-    if request.method == 'POST':
+def upload_project(request):
+    if request.method == 'GET':
         context = {
             'projects': Project.objects.all,
-            'form': ProjectUploadForm(),
-
+            'project_form': ProjectUploadForm(),
         }
-        return render(request, 'users/my-profile.html', context)
+        return render(request, 'projects_app/upload_project.html', context)
+
+
+def project_details(request):
+    context = {
+    }
+    return render(request, 'projects_app/project_details.html', context)

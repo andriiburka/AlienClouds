@@ -37,12 +37,12 @@
                     {% if request.user.is_authenticated %}
                         {% if user.is_superuser %}
                             <li><a class="color-user"
-                                   href="{% url 'myprofile' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
+                                   href="{% url 'upload_project' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
                             <li><a class="color-superuser" href="{% url 'admin:index' %}">Admin</a>|<a
                                     href="{% url 'logout' %}">Logout</a></li>
                         {% else %}
                             <li><a class="color-user"
-                                   href="{% url 'myprofile' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>|<a
+                                   href="{% url 'upload_project' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>|<a
                                     href="{% url 'logout' %}">Logout</a></li>
                         {% endif %}
 
@@ -82,7 +82,7 @@
     <div class="uk-offcanvas-bar">
         <div class="uk-panel">
             <h3 class="uk-contrast">
-                <a class="color-user" href="{% url 'myprofile' %}">
+                <a class="color-user" href="{% url 'upload_project' %}">
 
                     {% if request.user.is_authenticated %}
                         Welcome, {% firstof user.get_short_name user.get_username %}!
