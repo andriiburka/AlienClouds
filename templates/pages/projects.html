@@ -1,14 +1,20 @@
 {% extends 'shared/base.html' %}
+{% load static %}
+{% load tags %}
 
 {% block title %}{{ projects_title }}{% endblock %}
 
 {% block section %}
     <div class="div-projects-block">
-        <h2 class="h2-pink-shadow">The cells in this grid table view are equal to the number of registered users.</h2>
+        <h2 class="h2-pink-shadow">Projects</h2>
 
         {% for project in projects %}
             <div class="project-cell-block-{% cycle 'even' 'odd' %}">
-                <p style="text-align: center">{{ project.project_title }}</p>
+
+                <p style="text-align: center">{{ project.title | upper }}</p>
+{#                <img src="../../{{ project.image.url }}" alt="2">#}
+                <img src="{% static '1.png' %}" alt="3">
+
             </div>
         {% endfor %}
 

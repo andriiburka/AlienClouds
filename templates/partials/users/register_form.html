@@ -1,14 +1,10 @@
-{% load static %}
 
 <div class="contacts-cell" style="text-align: center">
     <form method="POST" action="" class='form'>
         {% csrf_token %}
 
         <div class='control' style="text-align: center; padding-top: 15px">
-            <h2 class="h2-pink-shadow">Registration</h2>
-            {#        <a style="padding-left: 3%" href="{% url 'index' %}">#}
-            {#            <img src="{% static 'img/logo.png' %}"/>#}
-            {#        </a>#}
+            <h2 class="h2-pink-shadow">Regin</h2>
         </div>
 
         {% if messages %}
@@ -47,6 +43,45 @@
 
         <div class='control block-cube block-input'>
             {{ form.password2 }}
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <div class='control block-cube block-input'>
+            {{ form.first_name }}
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <div class='control block-cube block-input'>
+            {{ form.last_name }}
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+        </div>
+
+        <div class='control block-cube block-input'>
+            {{ form.email }}
             <div class='bg-top'>
                 <div class='bg-inner'></div>
             </div>

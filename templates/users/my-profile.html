@@ -3,27 +3,69 @@
 
 {% block title %}User Profile | ALIENCLOUDS{% endblock %}
 
-
 {% block section %}
-    <style>
-        #main-div-profile{
-            margin-left: 10%;
-            margin-right: 10%;
-            padding-top: 10%;
-        }
+{#    <div class="upload-your-awesome-project">#}
+{#        <form method="POST" action="" autocomplete='off' class='form' id="upload-form">#}
+{#        {% csrf_token %}#}
+{##}
+{#        <div class='control2' style="text-align: center; padding-top: 150px">#}
+{#            <h2 class="h2-pink-shadow">Have a project?</h2>#}
+{#        </div>#}
+{##}
+{#        <div class='control block-cube block-input'>#}
+{#            <input name='TITLE' placeholder='TITLE' type='text'>#}
+{#            <div class='bg-top'>#}
+{#                <div class='bg-inner'></div>#}
+{#            </div>#}
+{#            <div class='bg-right'>#}
+{#                <div class='bg-inner'></div>#}
+{#            </div>#}
+{#            <div class='bg'>#}
+{#                <div class='bg-inner'></div>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <div class='control block-cube block-input'>#}
+{#            <input name='password' placeholder='Password' type='password'>#}
+{#            <div class='bg-top'>#}
+{#                <div class='bg-inner'></div>#}
+{#            </div>#}
+{#            <div class='bg-right'>#}
+{#                <div class='bg-inner'></div>#}
+{#            </div>#}
+{#            <div class='bg'>#}
+{#                <div class='bg-inner'></div>#}
+{#            </div>#}
+{#        </div>#}
+{##}
+{#        <button class='btn block-cube block-cube-hover' type='submit'>#}
+{#            <div class='bg-top'><div class='bg-inner'></div></div>#}
+{#            <div class='bg-right'><div class='bg-inner'></div></div>#}
+{#            <div class='bg'><div class='bg-inner'></div></div>#}
+{#            <div class='login_button_text'>UPLOAD</div>#}
+{##}
+{#        </button>#}
+{#    </form>#}
+{#    </div>#}
 
-        #welcome-after-login, #welcome-description-after-login{
-            color: whitesmoke;
-        }
+    <ul>
+        {% for p in projects %}
+            <li><p>{{ p.name }}</p></li>
+        {% endfor %}
+    </ul>
 
-    </style>
-
-    <div id="main-div-profile">
-        <h1 id="welcome-after-login">Welcome, {% firstof user.get_short_name user.get_username %}!</h1>
-        <h3 id="welcome-description-after-login">  This will be your 'USER PROFILE' when you should see the content you upload.</h3>
-    </div>
-
+     <form method="POST" action="">
+        {% csrf_token %}
+        {{ form }}
+        <button>Create</button>
+    </form>
 {% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'js/placeholders_upload.js' %}"></script>
+{% endblock %}
+
 
 {% block footer %}
 {% endblock %}

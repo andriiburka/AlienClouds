@@ -370,12 +370,12 @@ form {
     /*background: linear-gradient(90deg, rgb(157, 85, 82) 0%, rgb(48, 15, 88) 37%, rgb(183, 3, 234) 94%);*/
 
     /* WARNING LINE */
-    /*background: rgb(255,248,0);*/
-    /*background: linear-gradient(55deg, rgba(255,248,0,1) 6%, rgba(0,0,0,1) 7%, rgba(0,0,0,1) 24%, rgba(255,248,0,1) 25%, rgba(255,248,0,1) 40%, rgba(0,0,0,1) 41%, rgba(0,0,0,1) 58%, rgba(255,248,0,1) 59%, rgba(255,248,0,1) 74%, rgba(0,0,0,1) 75%, rgba(0,0,0,1) 92%, rgba(255,248,0,1) 93%);*/
+    background: rgb(255,248,0);
+    background: linear-gradient(55deg, rgba(255,248,0,1) 6%, rgba(0,0,0,1) 7%, rgba(0,0,0,1) 24%, rgba(255,248,0,1) 25%, rgba(255,248,0,1) 40%, rgba(0,0,0,1) 41%, rgba(0,0,0,1) 58%, rgba(255,248,0,1) 59%, rgba(255,248,0,1) 74%, rgba(0,0,0,1) 75%, rgba(0,0,0,1) 92%, rgba(255,248,0,1) 93%);
 
     /* gradient: purple - black */
-    background: rgb(255, 187, 252);
-    background: linear-gradient(0deg, rgb(3, 3, 3) 0%, rgb(113, 33, 102) 100%);
+    /*background: rgb(255, 187, 252);*/
+    /*background: linear-gradient(0deg, rgb(3, 3, 3) 0%, rgb(113, 33, 102) 100%);*/
 
 }
 
@@ -419,7 +419,7 @@ form {
 
 .block-cube.block-input input:focus ~ .bg-right .bg-inner, .block-cube.block-input input:focus ~ .bg-top .bg-inner, .block-cube.block-input input:focus ~ .bg-inner .bg-inner {
     top: 100%;
-    /*background: rgba(255, 255, 255, 0.5);*/
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .block-cube.block-input .bg-top, .block-cube.block-input .bg-right, .block-cube.block-input .bg {

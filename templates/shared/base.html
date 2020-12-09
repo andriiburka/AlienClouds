@@ -53,15 +53,15 @@
             </nav>
         </div>
     {% endblock %}
-
-
-    <section>
-        {% block section %}
-
-        {% endblock %}
-    </section>
-
 </header>
+
+
+
+<section>
+    {% block section %}{% endblock %}
+</section>
+
+
 
 <!-- page components -->
 <div id="search-modal" class="uk-modal">
@@ -119,7 +119,8 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/uikit.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/components/sticky.min.js'></script>
-<script src="{% static 'js/placeholders.js' %}"></script>
+
+{% block script %}{% endblock %}
 
 </body>
 
