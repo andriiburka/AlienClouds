@@ -22,6 +22,5 @@
 
 - [x] responsive design
 
-![responsive1](./static/img/readme_images/responsive.PNG =1792x)
-
+<img src="static/img/readme_images/responsive.PNG" alt="responsive1" width="500">
 
