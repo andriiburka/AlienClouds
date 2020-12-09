@@ -9,6 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 SECRET_KEY = 'j&o0esgkr_3-mjs9g*gf0#ud+4-$!5n1q%!b7)*ki6p^vx9q_i'
+
 DEBUG = True
 
 ALLOWED_HOSTS = [
@@ -60,17 +61,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'alienclouds.wsgi.application'
-
-# # LOCAL DATABASE
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'alienclouds_db',
-#         'HOST': 'localhost',
-#         'USER': 'postgres',
-#         'PASSWORD': '12345qwe',
-#     }
-# }
 
 # HEROKU DATABASE
 DATABASES = {
