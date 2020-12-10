@@ -61,16 +61,16 @@
     </div>
 
     {% block footer %}
-        <div class="footer">
+        <div class="footer" style="color: white; font-weight: lighter; letter-spacing: 1.3px">
             {% if count_users > 0 %}
-                <p><a style="color: white">{{ count_users }}</a> Registered
+                <small><a>{{ count_users }}</a> Registered
                     <script type="text/javascript" src="//rf.revolvermaps.com/0/0/9.js?i=5f3cvj125bh&amp;t=users"
-                            async="async"></script></p>
+                            async="async"></script>
+                    | Alienclouds 2020 | Andrii Burka</small>
             {% else %}
-                <p id="sf-mono-ultralight">No users registered yet</p>
+                <small id="sf-mono-ultralight">No users registered yet</small>
             {% endif %}
         </div>
     {% endblock %}
-
 {% endblock %}
 
