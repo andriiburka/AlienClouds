@@ -94,10 +94,10 @@ def loginPage(request):
                 login(request, user)
                 return redirect('index')
             else:
-                error_message = messages.info(request, 'Username OR password is incorrect')
+                messages.info(request, 'Username OR password is incorrect')
+        
         context = {
             'login_title': 'Login | ALIENCLOUDS',
-            'error_message': 'error_message',
         }
         return render(request, 'users/login.html', context)
 
