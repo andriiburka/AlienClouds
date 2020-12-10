@@ -6,7 +6,10 @@
 		<div class='control' style="text-align: center; padding-top: 15px">
 			{% if messages %}
 				{% for message in messages %}
-					<h4 style="line-height: 1; color: lightred;" class="h2-pink-shadow">{{ message }}</h4>
+					<h4 style="line-height: 1;
+						   color: lightred;
+						   padding-left: 5px;
+						   " class="h2-pink-shadow">{{ message }}</h4>
         		{% endfor %}
 			{% else %}
         		<h2 class="h2-pink-shadow">Login</h2>
