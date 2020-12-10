@@ -1,19 +1,17 @@
 
 <div class="div-form">
     <form method="POST" action="" autocomplete='off' class='form' id="login-form">
-        {% csrf_token %}
+    	{% csrf_token %}
 
-        <div class='control' style="text-align: center; padding-top: 15px">
-            {% if messages %}
-                <ul>
-                    {% for message in messages %}
-	                    <li><h2 class="h2-pink-shadow">{{ message }}</h2></li>
-                    {% endfor %}
-                </ul>
-            {% else %}
+		<div class='control' style="text-align: center; padding-top: 15px">
+			{% if messages %}
+				{% for message in messages %}
+					<h3 class="h2-pink-shadow">{{ message }}</h3>
+            	{% endfor %}
+			{% else %}
                 <h2 class="h2-pink-shadow">Login</h2>
-            {% endif %}
-        </div>
+			{% endif %}
+		</div>
 
         <div class='control block-cube block-input'>
             <input name='username'type="text">
