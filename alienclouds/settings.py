@@ -13,11 +13,12 @@ SECRET_KEY = 'j&o0esgkr_3-mjs9g*gf0#ud+4-$!5n1q%!b7)*ki6p^vx9q_i'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',  # local
-    '127.0.0.1',  # local
-    '0.0.0.0',  # base-dir$ heroku local
-    'alienclouds.herokuapp.com',  # heroku host
-    'www.alienclouds.tk',  # dot.tk redirected domain
+    '*',
+    # 'localhost',  # local
+    # '127.0.0.1',  # local
+    # '0.0.0.0',  # base-dir$ heroku local
+    # 'alienclouds.herokuapp.com',  # heroku host
+    # 'www.alienclouds.tk',  # dot.tk redirected domain
 ]
 
 INSTALLED_APPS = [
