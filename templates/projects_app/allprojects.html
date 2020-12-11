@@ -33,16 +33,18 @@
             line-height: normal;
         }
 
-        .description {
-            padding-left: 30px;
-            padding-right: 30px;
-            margin-top: 25px;
-            border: black 1px solid;
-            max-height: 100px
+        .description_class {
+            margin: 10px 10px 10px 10px;
+            overflow: hidden;
+            height: 10%;
         }
 
-        small {
-            display: inline;
+        #description_id {
+
+            text-align: center;
+
+            font-size: 12px;
+            word-wrap: break-word;
         }
     </style>
 
@@ -63,8 +65,8 @@
                 <a href="{% url 'project_details' %}">
                     <img class="pic" src="{{ project.image.url }}" alt="{{ project.title }}"></a>
 
-                <div class="description">
-                    <small>{{ project.description }}</small>
+                <div class="description_class">
+                    <small id="description_id">{{ project.description }}</small>
                 </div>
             </div>
         {% endfor %}
