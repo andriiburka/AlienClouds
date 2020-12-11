@@ -5,6 +5,11 @@ address, blockquote, dl, fieldset, figure, ol, p, pre, ul {
     margin: 0 0 0 0;
 }
 
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
 .day {
     background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;
 }
