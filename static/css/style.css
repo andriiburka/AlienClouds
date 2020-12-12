@@ -10,6 +10,11 @@ body, html {
   margin: 0;
 }
 
+header {
+    display: inline-block;
+    width: 100%;
+}
+
 .day {
     background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;
 }
@@ -175,71 +180,6 @@ body {
     line-height: 55px;
     text-align: center;
     color: #ff00dd;
-}
-
-.div-projects-block {
-    margin-left: 15%;
-    margin-right: 15%;
-}
-
-.project-cell-block-even {
-    background: rgba(102, 51, 153, .6) fixed;
-    float: left;
-    width: 31%;
-    padding: 1px;
-    height: 550px;
-    margin: 5px;
-}
-
-.project-cell-block-odd {
-    background: rgba(255, 0, 199, .3) fixed;
-    float: left;
-    width: 31%;
-    padding: 1px;
-    height: 550px;
-    margin: 5px;
-}
-
-@media (max-width: 1400px) {
-    .div-projects-block {
-        margin-left: 5%;
-        margin-right: 5%;
-    }
-
-    .project-cell-block-even {
-        float: left;
-        width: 48%;
-        padding: 1px;
-        height: 550px;
-        margin: 5px;
-    }
-
-    .project-cell-block-odd {
-        float: left;
-        width: 48%;
-        padding: 1px;
-        height: 550px;
-        margin: 5px;
-    }
-}
-
-@media (max-width: 768px) {
-    .div-projects-block {
-        margin-left: 0;
-        margin-right: 0;
-    }
-
-    .project-cell-block-even {
-        margin-left: 0;
-        margin-right: 50px;
-        width: 100%;
-    }
-
-    .project-cell-block-odd {
-        margin-left: 0;
-        margin-right: 50px;
-        width: 100%;
-    }
 }
 
 /* CONTACTS PAGE =============================================================*/
