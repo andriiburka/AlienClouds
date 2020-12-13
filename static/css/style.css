@@ -15,11 +15,11 @@ header {
     width: 100%;
 }
 
-.night {
+.day {
     background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;
 }
 
-.day {
+.night {
     background: linear-gradient(50rad, darkred, orangered, black, black, black) fixed;
 
 }
@@ -194,7 +194,7 @@ body {
 .contacts-container {
     text-align: center;
     width: auto;
-    padding-top: 8%;
+    padding-top: 20px;
     margin-left: 15%;
     margin-right: 15%;
 }
