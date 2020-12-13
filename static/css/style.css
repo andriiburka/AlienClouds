@@ -6,8 +6,8 @@ address, blockquote, dl, fieldset, figure, ol, p, pre, ul {
 }
 
 body, html {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 header {
@@ -15,12 +15,13 @@ header {
     width: 100%;
 }
 
-.day {
+.night {
     background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;
 }
 
-.night {
+.day {
     background: linear-gradient(50rad, darkred, orangered, black, black, black) fixed;
+
 }
 
 body {
@@ -180,6 +181,8 @@ body {
     line-height: 55px;
     text-align: center;
     color: #ff00dd;
+    /* DAY */
+    /*color: wheat;*/
 }
 
 /* CONTACTS PAGE =============================================================*/

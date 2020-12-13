@@ -42,102 +42,10 @@
 
 @media (max-width: 715px) { .allprojects_main_block { margin-left: 22%; margin-right: 22%; }}
 @media (max-width: 620px) { .allprojects_main_block { margin-left: 18%; margin-right: 18%; }}
-@media (max-width: 570px) { .allprojects_main_block { margin-left: 16%; margin-right: 16%; }}
-@media (max-width: 520px) { .allprojects_main_block { margin-left: 14%; margin-right: 14%; }}
 
-@media (max-width: 470px) { .allprojects_main_block { margin-left: 8%; margin-right: 8%; }}
-@media (max-width: 420px) { .allprojects_main_block { margin-left: 4%; margin-right: 4%; }}
-@media (max-width: 400px) { .allprojects_main_block { margin-left: 0; margin-right: 0; }}
-
-
-/* 1 COL */
-/*@media (max-width: 700px) { .allprojects_main_block { margin-left: 20%; margin-right: 20%; }}*/
-/*@media (max-width: 420px) { .allprojects_main_block { margin-left: 0; margin-right: 0; }}*/
-
-
-
-
-/*@media (max-width: 700px) {*/
-/*    .even-project, .odd-project {*/
-/*        margin-left: 0;*/
-/*        margin-right: 50px;*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
-
-
-
-
-
-
-
-
-/*@media (max-width: 1850px) {*/
-/*    .allprojects_main_block {*/
-/*        margin-left: 10%;*/
-/*        margin-right: 10%;*/
-/*    }*/
-/*    .even-project, .odd-project {*/
-/*        float: left;*/
-/*        width: 32.5%;*/
-/*        padding: 1px;*/
-/*        height: 550px;*/
-/*        margin: 5px;*/
-/*    }*/
-/*}*/
-
-/*!* 3 COLS *!*/
-/*@media (max-width: 1800px) {*/
-/*    .allprojects_main_block {*/
-/*        margin-left: 20%;*/
-/*        margin-right: 20%;*/
-/*    }*/
-/*    .even-project, .odd-project {*/
-/*        float: left;*/
-/*        width: 32.5%;*/
-/*        padding: 1px;*/
-/*        height: 550px;*/
-/*        !*margin: 5px;*!*/
-/*    }*/
-/*}*/
-
-/*!* 2 CLOS *!*/
-/*@media (max-width: 1400px) {*/
-/*    .allprojects_main_block {*/
-/*        margin-left: 20%;*/
-/*        margin-right: 20%;*/
-/*    }*/
-/*    .even-project, .odd-project {*/
-/*        float: left;*/
-/*        width: 50%;*/
-/*        padding: 1px;*/
-/*        height: 550px;*/
-/*        !*margin: 5px;*!*/
-/*    }*/
-/*}*/
-
-/*!* 2 COLS with side margins *!*/
-/*@media (max-width: 1000px) {*/
-/*    .allprojects_main_block {*/
-/*        margin-left: 20%;*/
-/*        margin-right: 20%;*/
-/*    }*/
-/*    .even-project, .odd-project {*/
-/*        margin-left: 0;*/
-/*        margin-right: 50px;*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
-
-/* 1 COL - PHONE VIEW */
-/*@media (max-width: 700px) {*/
-/*    .allprojects_main_block {*/
-/*        margin-left: 0;*/
-/*        margin-right: 0;*/
-/*    }*/
-/*    .even-project, .odd-project {*/
-/*        margin-left: 0;*/
-/*        margin-right: 50px;*/
-/*        width: 100%;*/
-/*    }*/
-/*}*/
+@media (max-width: 570px) {
+    .allprojects_main_block {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}

@@ -30,7 +30,7 @@
                 <a href="#search-modal" class="main-navbar__search-btn uk-icon-search" data-uk-modal></a>
                 <ul class="main-navbar__nav uk-hidden-small">
 
-                    <li><a href="{% url 'all projects' %}">projects</a></li>
+                    <li><a href="{% url 'all_projects' %}">projects</a></li>
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
                     {% if request.user.is_authenticated %}
@@ -107,7 +107,7 @@
                 <li><a href="{% url 'login' %}">LOGIN</a></li>
             {% endif %}
             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-            <li><a href="{% url 'all projects' %}">PROJECTS</a></li>
+            <li><a href="{% url 'all_projects' %}">PROJECTS</a></li>
         </ul>
     </div>
 </div>

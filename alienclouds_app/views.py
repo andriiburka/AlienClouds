@@ -5,9 +5,15 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.views.generic import ListView
 
-
 # Inherits the class UserCreationForm but now it has an email form
 from .forms import CreateUserForm  # CMD+Click to visit this class
+
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+
+# Create your views here.
+from alienclouds_app.forms import ProjectUploadForm
+from alienclouds_app.models import *
 
 
 #  ███╗   ██╗  █████╗  ██╗   ██╗     ██████╗   █████╗  ██████╗
@@ -24,7 +30,7 @@ def index(request):
         'users': User.objects.all(),
         'count_users': User.objects.all().count(),
     }
-    return render(request, 'index.html', context)
+    return render(request, 'pages/index.html', context)
 
 
 class IndexListView(ListView):
@@ -76,7 +82,7 @@ def registerPage(request):
         else:
             form = CreateUserForm()
         context = {'form': form}
-        return render(request, 'users/register.html', context)
+        return render(request, 'auth/register.html', context)
 
 
 def loginPage(request):
@@ -95,11 +101,11 @@ def loginPage(request):
                 return redirect('index')
             else:
                 messages.info(request, 'Username OR password is incorrect')
-        
+
         context = {
             'login_title': 'Login | ALIENCLOUDS',
         }
-        return render(request, 'users/login.html', context)
+        return render(request, 'auth/login.html', context)
 
 
 def logoutUser(request):
@@ -107,3 +113,37 @@ def logoutUser(request):
     return redirect('index')
 
 
+#
+#
+#  ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
+#  ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝██╔════╝
+#  ██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   ███████╗
+#  ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   ╚════██║
+#  ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   ███████║
+#  ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
+
+
+def all_projects(request):
+    context = {
+        'projects_title': 'Projects | ALIENCLOUDS',
+        'projects': Project.objects.all(),
+        'images': Project.image,
+    }
+    return render(request, '../templates/pages/allprojects.html', context)
+
+
+def project_details(request, pk):
+    context = {
+        'project': Project.objects.get(pk=pk)
+    }
+    return render(request, '../templates/pages/project_details.html', context)
+
+
+@login_required(login_url='login')
+def upload_project(request):
+    if request.method == 'GET':
+        context = {
+            'projects': Project.objects.all,
+            'project_form': ProjectUploadForm(),
+        }
+        return render(request, '../templates/pages/upload_project', context)

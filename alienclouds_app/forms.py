@@ -5,6 +5,9 @@ from django.forms import ModelForm
 
 # Extends functionality of the class UserCreationForm.
 # Add email
+from alienclouds_app.models import Project
+
+
 class CreateUserForm(UserCreationForm):
     class Meta:
         model = User
@@ -16,3 +19,9 @@ class CreateUserForm(UserCreationForm):
             'last_name',
             'email',
         ]
+
+
+class ProjectUploadForm(ModelForm):
+    class Meta:
+        model = Project
+        fields = '__all__'

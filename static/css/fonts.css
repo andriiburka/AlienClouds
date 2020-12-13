@@ -40,9 +40,16 @@
 }
 
 .base_title {
+    padding-top: 20px;
     font-family: sf_pro_display-ultralight, Helvetica, sans-serif;
-    font-size: 60px;
-    color: #096dcc;
+    font-size: 35px;
+    background: linear-gradient(40deg,
+    rgba(0, 128, 128, .01),
+    rgba(0, 128, 128, .01),
+    rgba(0, 128, 128, 1),
+    rgba(0, 128, 128, .01),
+    rgba(0, 128, 128, .01));
+    color: wheat;
 }
 
 html {
