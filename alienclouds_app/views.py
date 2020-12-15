@@ -1,18 +1,15 @@
 from django.shortcuts import render, redirect
+
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+
 from django.views.generic import ListView
-
-# Inherits the class UserCreationForm but now it has an email form
-from .forms import CreateUserForm  # CMD+Click to visit this class
-
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-# Create your views here.
-from alienclouds_app.forms import ProjectUploadForm
+from alienclouds_app.forms.projects import UploadForm
+from alienclouds_app.forms.users import CreateUserForm
 from alienclouds_app.models import *
 
 
@@ -143,7 +140,6 @@ def project_details(request, pk):
 def upload_project(request):
     if request.method == 'GET':
         context = {
-            'projects': Project.objects.all,
-            'project_form': ProjectUploadForm(),
+            'upload_form': UploadForm(),
         }
         return render(request, '../templates/pages/upload_project.html', context)

@@ -22,6 +22,5 @@ urlpatterns = (
     path('allprojects/', all_projects, name='all_projects'),
     path('upload_project/', upload_project, name='upload_project'),
 
-    # path('project_details/', project_details, name='project_details'),
     path('project_details/<int:pk>', project_details, name='project_details'),
 )

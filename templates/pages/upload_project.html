@@ -4,67 +4,73 @@
 {% block title %}User Profile | ALIENCLOUDS{% endblock %}
 
 {% block section %}
-{#    <div class="upload-your-awesome-project">#}
-{#        <form method="POST" action="" autocomplete='off' class='form' id="upload-form">#}
-{#        {% csrf_token %}#}
-{##}
-{#        <div class='control2' style="text-align: center; padding-top: 150px">#}
-{#            <h2 class="h2-pink-shadow">Have a project?</h2>#}
-{#        </div>#}
-{##}
-{#        <div class='control block-cube block-input'>#}
-{#            <input name='TITLE' placeholder='TITLE' type='text'>#}
-{#            <div class='bg-top'>#}
-{#                <div class='bg-inner'></div>#}
-{#            </div>#}
-{#            <div class='bg-right'>#}
-{#                <div class='bg-inner'></div>#}
-{#            </div>#}
-{#            <div class='bg'>#}
-{#                <div class='bg-inner'></div>#}
-{#            </div>#}
-{#        </div>#}
-{##}
-{#        <div class='control block-cube block-input'>#}
-{#            <input name='password' placeholder='Password' type='password'>#}
-{#            <div class='bg-top'>#}
-{#                <div class='bg-inner'></div>#}
-{#            </div>#}
-{#            <div class='bg-right'>#}
-{#                <div class='bg-inner'></div>#}
-{#            </div>#}
-{#            <div class='bg'>#}
-{#                <div class='bg-inner'></div>#}
-{#            </div>#}
-{#        </div>#}
-{##}
-{#        <button class='btn block-cube block-cube-hover' type='submit'>#}
-{#            <div class='bg-top'><div class='bg-inner'></div></div>#}
-{#            <div class='bg-right'><div class='bg-inner'></div></div>#}
-{#            <div class='bg'><div class='bg-inner'></div></div>#}
-{#            <div class='login_button_text'>UPLOAD</div>#}
-{##}
-{#        </button>#}
-{#    </form>#}
-{#    </div>#}
+    <div class="upload-your-awesome-project">
+        <form method="POST" action="" autocomplete='off' class='form' id="upload-form">
+            {% csrf_token %}
 
-    <ul>
-        {% for p in projects %}
-            <li><p>{{ p.name }}</p></li>
-        {% endfor %}
-    </ul>
+            <div class='control2' style="text-align: center; padding-top: 150px">
+                <h2 class="h2-pink-shadow">Have a project?</h2>
+            </div>
 
-     <form method="POST" action="">
-        {% csrf_token %}
+            <div class='control block-cube block-input'>
+                <input name='TITLE' placeholder='TITLE' type='text'>
+                <div class='bg-top'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg-right'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg'>
+                    <div class='bg-inner'></div>
+                </div>
+            </div>
+
+            <div class='control block-cube block-input'>
+{#                {{  }}#}
+{#                <input name='password' placeholder='Password' type='password'>#}
+                <div class='bg-top'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg-right'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg'>
+                    <div class='bg-inner'></div>
+                </div>
+            </div>
+
+            <button class='btn block-cube block-cube-hover' type='submit'>
+                <div class='bg-top'>
+                    <div class='bg-inner'></div>
+                </div>
+
+                <div class='bg-right'>
+                    <div class='bg-inner'></div>
+                </div>
+
+                <div class='bg'>
+                    <div class='bg-inner'></div>
+                </div>
+
+                <div class='login_button_text'>ADD</div>
+
+            </button>
+        </form>
+    </div>
+
+
+    <form method="POST" action="upload_project.html">
         {{ form }}
+        {% csrf_token %}
+
         <button>Create</button>
     </form>
 {% endblock %}
 
 
-{#{% block script %}#}
-{#    <script src="{% static 'js/placeholders_upload.js' %}"></script>#}
-{#{% endblock %}#}
+{% block script %}
+    <script src="{% static 'js/placeholders_upload.js' %}"></script>
+{% endblock %}
 
 
 {% block footer %}

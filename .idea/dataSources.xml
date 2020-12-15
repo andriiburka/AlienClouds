@@ -17,5 +17,13 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://ec2-54-155-22-153.eu-west-1.compute.amazonaws.com:5432/d37l92rsn6a85k</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Django default" uuid="23abc9c7-f08c-4412-b092-2cb9da5da470">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/alienclouds/settings.py</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-155-22-153.eu-west-1.compute.amazonaws.com:5432/d37l92rsn6a85k</jdbc-url>
+    </data-source>
   </component>
 </project>
