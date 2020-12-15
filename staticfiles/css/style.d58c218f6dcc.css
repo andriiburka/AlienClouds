@@ -1,0 +1,422 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic,300,300italic,600,600italic);
+
+/* overwriting uikit.min.css:2:1111 */
+address, blockquote, dl, fieldset, figure, ol, p, pre, ul {
+    margin: 0 0 0 0;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+header {
+    display: inline-block;
+    width: 100%;
+}
+
+.day {
+    background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;
+}
+
+.night {
+    /*background: linear-gradient(50rad, darkred, orangered, black, black, black) fixed;*/
+    background: url("../img/bg.c9a1c0f056ad.jpg") fixed;
+    background-size: 50%;
+
+}
+
+body {
+    margin-left: 0 !important;
+}
+
+.sticky-menu {
+    z-index: 100;
+}
+
+.sticky-menu.uk-active .main-navbar {
+    margin-top: 0;
+}
+
+/* NAVBAR BACKGROUND */
+.main-navbar {
+    position: relative;
+    float: left;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 25px; /* padding: 16px; */
+    margin-top: 0; /*10px*/
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+.main-navbar::after {
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.main-navbar__logo {
+    position: absolute;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 273px;
+    height: 86px;
+    margin: -20px auto;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+}
+
+@media (min-width: 768px) {
+    .main-navbar__logo {
+        position: relative;
+        float: left;
+    }
+}
+
+.main-navbar__nav {
+    float: right;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.main-navbar__nav > li {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+.main-navbar__nav > li > a {
+    display: inline-block;
+    padding: 0 5px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 40px;
+    transition: 280ms;
+}
+
+.main-navbar__nav > li > a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.main-navbar--icons, .main-navbar__search-btn, .main-navbar__mobile-btn {
+    padding: 0 5px;
+    font-size: 18px;
+    color: white;
+    line-height: 40px;
+    transition: 280ms;
+}
+
+.main-navbar--icons:hover, .main-navbar__search-btn:hover, .main-navbar__mobile-btn:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.main-navbar__search-btn {
+    float: right;
+    margin-left: 0;
+}
+
+@media (min-width: 480px) {
+    .main-navbar__search-btn {
+        margin-left: 10px;
+    }
+}
+
+.main-navbar__mobile-btn {
+    float: left;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    height: calc(100% - 40px - 30px - 10px);
+    padding: 0 30px;
+}
+
+.hero-content__heading, .hero-content__heading--contrast {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.hero-content__heading--contrast {
+    color: white;
+}
+
+
+/* PROJECT BLOCKS ====================================================================*/
+* {
+    box-sizing: border-box;
+}
+
+/* Style the header */
+.header {
+    background-color: #f1f1f1;
+    padding: 30px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the footer */
+.footer {
+    background-color: #f1f1f1;
+    padding: 10px;
+}
+
+.h2-pink-shadow {
+    font-family: sf_pro_display-ultralight, Helvetica, sans-serif;
+    text-shadow: 4px 0 4px black;
+    line-height: 55px;
+    text-align: center;
+    color: #ff00dd;
+    /* DAY */
+    /*color: wheat;*/
+}
+
+/* CONTACTS PAGE =============================================================*/
+.contacts-container h1 {
+    text-align: center;
+    color: cornflowerblue;
+}
+
+.contacts-container {
+    text-align: center;
+    width: auto;
+    padding-top: 20px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.contacts-cell {
+    /*background: rebeccapurple fixed;*/
+    float: left;
+    width: 49%;
+    padding: 1px;
+    height: 550px;
+    margin: 5px;
+    text-align: left;
+}
+
+@media (max-width: 1400px) {
+    .contacts-container {
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+
+    .contacts-cell {
+        float: left;
+        width: 100%;
+        padding: 1px;
+        height: 600px;
+        margin: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contacts-container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    .contacts-cell {
+        margin-left: 0;
+        margin-right: 50px;
+        width: 100%;
+    }
+}
+
+
+/* LOGIN - REGISTER  ====================================================================*/
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+body {
+    color: #fff;
+}
+
+div.div-form {
+    display: block;
+    text-align: center;
+    padding: 10%;
+}
+
+form {
+    width: 273px;
+    padding: 0 0;
+    margin: 0 auto;
+}
+
+.form .control {
+    margin: 0 0 24px;
+}
+
+.form .control input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+}
+
+.form .control input:hover, .form .control input:focus {
+    outline: none;
+    border: 0;
+}
+
+.form .btn {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: #fff;
+}
+
+.block-cube {
+    position: relative;
+}
+
+.block-cube .bg-top {
+    position: absolute;
+    height: 10px;
+
+
+    background: #020024;
+    background: linear-gradient(90deg, #07051a 0%, rgb(41, 12, 88) 37%, rgb(79, 54, 103) 94%);
+
+
+    bottom: 100%;
+    left: 5px;
+    right: -5px;
+    transform: skew(-45deg, 0);
+    margin: 0;
+}
+
+.block-cube .bg-top .bg-inner {
+    bottom: 0;
+}
+
+.block-cube .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+
+    /*!* backup *!*/
+    /*background: #020024;*/
+    /*background: linear-gradient(90deg, rgb(157, 85, 82) 0%, rgb(48, 15, 88) 37%, rgb(183, 3, 234) 94%);*/
+
+    /* WARNING LINE */
+    background: rgb(255, 248, 0);
+    background: linear-gradient(55deg, rgba(255, 248, 0, 1) 6%, rgba(0, 0, 0, 1) 7%, rgba(0, 0, 0, 1) 24%, rgba(255, 248, 0, 1) 25%, rgba(255, 248, 0, 1) 40%, rgba(0, 0, 0, 1) 41%, rgba(0, 0, 0, 1) 58%, rgba(255, 248, 0, 1) 59%, rgba(255, 248, 0, 1) 74%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 92%, rgba(255, 248, 0, 1) 93%);
+
+    /* gradient: purple - black */
+    /*background: rgb(255, 187, 252);*/
+    /*background: linear-gradient(0deg, rgb(3, 3, 3) 0%, rgb(113, 33, 102) 100%);*/
+
+}
+
+.block-cube .bg-right {
+    position: absolute;
+    background: rgb(114, 37, 105);
+    top: -5px;
+    z-index: 0;
+    bottom: 5px;
+    width: 10px;
+    left: 100%;
+    transform: skew(0, -45deg);
+}
+
+.block-cube .bg-right .bg-inner {
+    left: 0;
+}
+
+.block-cube .bg .bg-inner {
+    transition: all 0.4s ease-in-out;
+}
+
+.block-cube .bg-inner {
+    background: #323232;
+    position: absolute;
+    left: 1px;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+}
+
+.block-cube .login_button_text {
+    position: relative;
+    z-index: 2;
+}
+
+.block-cube.block-input input {
+    position: relative;
+    z-index: 2;
+}
+
+.block-cube.block-input input:focus ~ .bg-right .bg-inner, .block-cube.block-input input:focus ~ .bg-top .bg-inner, .block-cube.block-input input:focus ~ .bg-inner .bg-inner {
+    top: 100%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.block-cube.block-input .bg-top, .block-cube.block-input .bg-right, .block-cube.block-input .bg {
+    background: rgba(255, 255, 255, 0.5);
+    transition: background 0.2s ease-in-out;
+}
+
+.block-cube.block-input .bg-right .bg-inner, .block-cube.block-input .bg-top .bg-inner {
+    transition: all 0.4s ease-in-out;
+}
+
+.block-cube.block-input:focus .bg-top, .block-cube.block-input:hover .bg-top, .block-cube.block-input:focus .bg-right, .block-cube.block-input:hover .bg-right, .block-cube.block-input:focus .bg, .block-cube.block-input:hover .bg {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.block-cube.block-cube-hover:focus .bg .bg-inner, .block-cube.block-cube-hover:hover .bg .bg-inner {
+    top: 100%;
+}
+
+.credits {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    padding: 15px 15px;
+    width: 100%;
+    z-index: 111;
+}
+
+.credits a {
+    opacity: 0.6;
+}
+
+.credits a:hover {
+    opacity: 1;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.05);
+    color: white;
+    text-align: center;
+}

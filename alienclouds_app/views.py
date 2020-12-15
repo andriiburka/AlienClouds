@@ -146,4 +146,4 @@ def upload_project(request):
             'projects': Project.objects.all,
             'project_form': ProjectUploadForm(),
         }
-        return render(request, '../templates/pages/upload_project', context)
+        return render(request, '../templates/pages/upload_project.html', context)
