@@ -1,15 +1,9 @@
 {% extends 'shared/base.html' %}
 {% load static %}
 {% load tags %}
-
 {% block title %}{{ projects_title }}{% endblock %}
-
-{% block section %}
+{% block style %}
     <style>
-        .center {
-            text-align: center
-        }
-
         .pic {
             object-fit: cover;
             object-position: 0 0;
@@ -36,15 +30,10 @@
         .description_class {
             vertical-align: bottom;
             display: table-cell;
-
-            margin: 20px 30px;
-
+            margin: 0 40px;
             border-top: rgba(0, 0, 0, .1) 5px solid;
-
             overflow: hidden;
-            height: 15%;
-        {#background-color: green;#}{#height: 500px;#}
-            /*FLEX BOX */
+            height: 135px;
             display: -ms-flexbox;
             display: -webkit-flex;
             display: flex;
@@ -67,33 +56,27 @@
 
         #description_id {
             font-size: 12px;
-        {#background-color: rgba(0, 0, 0, .1);#} padding: 30px;
-
-            /*FLEX BOX CHILD */
+            padding: 5px;
             -webkit-order: 0;
             -ms-flex-order: 0;
             order: 0;
             -webkit-flex: 0 1 auto;
             -ms-flex: 0 1 auto;
             flex: 0 1 auto;
-            -webkit-align-self: flex-end;
+            -webkit-align-self: flex-start;
             -ms-flex-item-align: end;
-            align-self: flex-end;
+            align-self: flex-start;
         }
-
     </style>
+{% endblock %}
 
-
+{% block section %}
     <h2 class="sfprodisplay-white-shadow">PROJECTS</h2>
-
-    <div class="allprojects_main_block" style="align-content: center">
-
-        <div><p class="project_title">{{ project.title }}</p></div>
+    <div class="allprojects_main_block">
         {% for project in projects %}
             <div class="{% cycle 'even' 'odd' %}-project">
-                <div>
-                    <p class="project_title">{{ project.title | upper }}</p>
-                </div>
+
+                <div><p class="project_title">{{ project.title | upper }}</p></div>
 
                 <a href="{% url 'project_details' project.id %}">
                     <img class="pic" src="{{ project.image.url }}" alt="{{ project.title }}"></a>
@@ -101,10 +84,10 @@
                 <div class="description_class">
                     <small id="description_id">{{ project.description }}</small>
                 </div>
+
                 <div>
                     <h4 class="sfprodisplay-white-shadow">
-
-                        <a class="all_links" href="{% url 'project_details' project.id %}">Read more...</a>
+                        <a class="uk-button" href="{% url 'project_details' project.id %}">Read more</a>
                     </h4>
                 </div>
 

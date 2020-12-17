@@ -2,9 +2,6 @@ from alienclouds_app.models import Project, ShopItem
 from django.contrib import admin
 #
 #
-#
-#
-#
 #  ███████╗██╗██╗  ████████╗███████╗██████╗ ███████╗
 #  ██╔════╝██║██║  ╚══██╔══╝██╔════╝██╔══██╗██╔════╝
 #  █████╗  ██║██║     ██║   █████╗  ██████╔╝███████╗
@@ -15,7 +12,7 @@ from django.contrib import admin
 
 
 class ProjectsAdmin(admin.ModelAdmin):
-    list_display = ('title', 'image', 'id',)
+    list_display = ('title', 'image', 'description', 'id')
     list_filter = ('title', 'image',)
 
 

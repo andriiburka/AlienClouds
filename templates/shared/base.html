@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="{% static 'css/cube.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <link rel="stylesheet" href="{% static 'css/show_borders.css' %}">
+
+    {% block style %}{% endblock %}
+
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
 </head>
@@ -30,23 +33,26 @@
                 <a href="#search-modal" class="main-navbar__search-btn uk-icon-search" data-uk-modal></a>
                 <ul class="main-navbar__nav uk-hidden-small">
 
-                    <li><a href="{% url 'shop' %}">SHOP</a></li>
-                    <li><a href="{% url 'projects' %}">Projects</a></li>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-
                     {% if request.user.is_authenticated %}
                         {% if user.is_superuser %}
-                            <li><a class="color-user"
-                                   href="{% url 'upload_project' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>
-                            <li><a class="color-superuser" href="{% url 'admin:index' %}">Admin</a>|<a
-                                    href="{% url 'logout' %}">Logout</a></li>
+                            <li><a class="color-user uk-button" href="{% url 'upload_project' %}">UPLOAD</a></li>
+                            <li><a class="color-user uk-button" href="{% url 'shop' %}">SHOP</a></li>
+                            <li><a class="color-user uk-button" href="{% url 'projects' %}">PROJECTS</a></li>
+                            <li><a class="uk-icon-user color-user uk-button" href=" {% url 'admin:index' %}"> Admin</a>
+                            </li>
+                            <li><a class="uk-icon-sign-out color-user uk-button" href="{% url 'logout' %}"></a></li>
                         {% else %}
-                            <li><a class="color-user"
-                                   href="{% url 'upload_project' %}">Welcome, {% firstof user.get_short_name user.get_username %}!</a>|<a
-                                    href="{% url 'logout' %}">Logout</a></li>
+                            <li><a class="color-user uk-button" href="{% url 'upload_project' %}">UPLOAD</a></li>
+                            <li><a class="color-user uk-button" href="{% url 'shop' %}">SHOP</a></li>
+                            <li><a class="color-user uk-button" href="{% url 'projects' %}">PROJECTS</a></li>
+                            <li><a class="uk-icon-user color-user uk-button" href="#"> {{ user }}</a></li>
+                            <li><a class="uk-icon-sign-out color-user uk-button" href="{% url 'logout' %}"></a></li>
                         {% endif %}
                     {% else %}
-                        <li><a href="{% url 'login' %}">Login</a></li>
+                        <li><a class="color-user uk-button" href="{% url 'shop' %}">SHOP</a></li>
+                        <li><a class="color-user uk-button" href="{% url 'projects' %}">PROJECTS</a></li>
+                        <li><a class="color-user uk-button" href="{% url 'login' %}">LOGIN</a></li>
+
                     {% endif %}
 
                 </ul>
@@ -120,6 +126,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/uikit/2.26.2/js/components/sticky.min.js'></script>
 
 {% block script %}{% endblock %}
+
 {% block footer %}
 
 {% endblock %}

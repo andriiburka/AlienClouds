@@ -18,14 +18,15 @@
     src: url(../fonts/Sansation-Regular.ttf);
 }
 
-.color-user {
-    color: #00a6ff !important;
-    font-weight: 900;
+.uk-button {
+    background: transparent;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    width: 100px;
 }
-
-.color-superuser {
-    color: #ff0dae !important;
-    font-weight: 900;
+.uk-button:hover {
+    background: indigo;
+    color: coral;
 }
 
 .form {

@@ -113,7 +113,7 @@ body {
     padding: 0 5px;
     color: white;
     text-decoration: none;
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
     line-height: 40px;
     transition: 280ms;
 }

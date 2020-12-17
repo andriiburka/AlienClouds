@@ -1,16 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-
 from alienclouds_app.forms.projects import UploadItemForm, UploadProjectForm
 from alienclouds_app.forms.users import CreateUserForm
 from alienclouds_app.models import *
-
-
 #
 #
 #
@@ -22,6 +18,7 @@ from alienclouds_app.models import *
 #  ██║╚██╗██║ ██╔══██║ ╚██╗ ██╔╝     ██╔══██╗ ██╔══██║ ██╔══██╗
 #  ██║ ╚████║ ██║  ██║  ╚████╔╝      ██████╔╝ ██║  ██║ ██║  ██║
 #  ╚═╝  ╚═══╝ ╚═╝  ╚═╝   ╚═══╝       ╚═════╝  ╚═╝  ╚═╝ ╚═╝  ╚═╝
+#  Comment:
 
 
 def index(request):
@@ -45,8 +42,6 @@ class IndexListView(ListView):
         context_dict = super().get_context_data()
         context_dict['title'] = 'Class Title'
         return context_dict
-
-
 #
 #
 #
@@ -58,7 +53,9 @@ class IndexListView(ListView):
 #  ██╔══██║ ██║   ██║    ██║    ██╔══██║
 #  ██║  ██║ ╚██████╔╝    ██║    ██║  ██║________________________________________________________________________________
 #  ╚═╝  ╚═╝  ╚═════╝     ╚═╝    ╚═╝  ╚═╝
-#
+#  Comment:
+
+
 def registerPage(request):
     """ register page - everyone can visit"""
     if request.user.is_authenticated:  # for example if you are logged in no sense to login again SO redirect to index
@@ -81,10 +78,7 @@ def registerPage(request):
 
 
 def loginPage(request):
-    """ register page - everyone can visit"""
-    # if user is logged in
     if request.user.is_authenticated:
-        # no sense to login again so redirect to homepage
         return redirect('index')
     else:
         if request.method == 'POST':
@@ -93,7 +87,7 @@ def loginPage(request):
             if user is not None:
                 # executes django method 'login'
                 login(request, user)
-                return redirect('index')
+                return redirect('upload_project')
             else:
                 messages.info(request, 'Username OR password is incorrect')
 
@@ -105,9 +99,7 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('index')
-
-
+    return redirect('login')
 #
 #
 #
@@ -120,13 +112,24 @@ def logoutUser(request):
 #  ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   ███████║___________________________________________________
 #  ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
 
+
 @login_required(login_url='login')
 def upload_project(request):
     if request.method == 'GET':
         context = {
             'form': UploadProjectForm()
         }
-        return render(request, '../templates/pages/upload_project.html', context)
+        return render(request, 'pages/upload_project.html', context)
+    else:
+        form = UploadProjectForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('projects')
+        context = {
+            'form': form,
+        }
+        return render(request, 'pages/upload_project.html', context)
 
 
 def projects(request):
@@ -135,16 +138,14 @@ def projects(request):
         'projects': Project.objects.all(),
         'images': Project.image,
     }
-    return render(request, '../templates/pages/projects.html', context)
+    return render(request, 'pages/projects.html', context)
 
 
 def project_details(request, pk):
     context = {
         'project': Project.objects.get(pk=pk)
     }
-    return render(request, '../templates/pages/project_details.html', context)
-
-
+    return render(request, 'pages/project_details.html', context)
 #
 #
 #
@@ -157,6 +158,7 @@ def project_details(request, pk):
 #  ███████║██║  ██║╚██████╔╝██║_________________________________________________________________________________________
 #  ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝
 #
+
 
 @login_required(login_url='login')
 def upload_item(request):

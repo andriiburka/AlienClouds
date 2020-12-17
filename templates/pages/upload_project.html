@@ -4,111 +4,40 @@
 {% block title %}User Profile | ALIENCLOUDS{% endblock %}
 
 {% block section %}
-    {#    <form method="POST" action="" autocomplete='off' class='form' id="upload-form">#}
-    {#        {% csrf_token %}#}
-    {#        <h2 class="sfprodisplay-white-shadow">Have a project?</h2>#}
-    {##}
-    {##}
-    {#        <div class='control block-cube block-input'>#}
-    {#            <input name='TITLE' placeholder='TITLE' type='text'>#}
-    {#            <div class='bg-top'>#}
-    {#                <div class='bg-inner'></div>#}
-    {#            </div>#}
-    {#            <div class='bg-right'>#}
-    {#                <div class='bg-inner'></div>#}
-    {#            </div>#}
-    {#            <div class='bg'>#}
-    {#                <div class='bg-inner'></div>#}
-    {#            </div>#}
-    {#        </div>#}
-    {##}
-    {#        <div class='control block-cube block-input'>#}
-    {#                {{  }}#}
-    {#                <input name='password' placeholder='Password' type='password'>#}
-    {#            <div class='bg-top'>#}
-    {#                <div class='bg-inner'></div>#}
-    {#            </div>#}
-    {#            <div class='bg-right'>#}
-    {#                <div class='bg-inner'></div>#}
-    {#            </div>#}
-    {#            <div class='bg'>#}
-    {#                <div class='bg-inner'></div>#}
-    {#            </div>#}
-    {#        </div>#}
-    {##}
-    {#        <button class='btn block-cube block-cube-hover' type='submit'>#}
-    {#            <div class='bg-top'>#}
-    {#                <div class='bg-inner'></div>#}
-    {#            </div>#}
-    {##}
-    {#            <div class='bg-right'>#}
-    {#                <div class='bg-inner'></div>#}
-    {#            </div>#}
-    {##}
-    {#            <div class='bg'>#}
-    {#                <div class='bg-inner'></div>#}
-    {#            </div>#}
-    {##}
-    {#            <div class='login_button_text'>ADD</div>#}
-    {##}
-    {#        </button>#}
-    {#    </form>#}
-
-
-
-        <form method="POST" action="upload_project.html">{% csrf_token %}
-            <h2 class="sfprodisplay-white-shadow">Have a project?</h2>
-            <div>
-                {{ form.title.label }}
-                {{ form.title }}
+    <form enctype="multipart/form-data" method="POST" action="{% url 'upload_project' %}">{% csrf_token %}
+        <h2 class="sfprodisplay-white-shadow">Have a project?</h2>
+        <div>
+            {{ form.title.label }}
+            {{ form.title }}
+        </div>
+        <br>
+        <div>
+            {{ form.image.label }}
+            {{ form.image }}
+        </div>
+        <br>
+        <div>
+            {{ form.description.label }}
+            {{ form.description }}
+        </div>
+        <br>
+        <button class='uk-button block-cube block-cube-hover' type='submit'>
+            <div class='bg-top'>
+                <div class='bg-inner'></div>
             </div>
-            <br>
-            <div>
-                {{ form.image.label }}
-                {{ form.image }}
-            </div>
-            <br>
-            <div>
-                {{ form.description.label }}
-                {{ form.description }}
-            </div>
-            <br>
-            <input type="submit">
-        </form>
 
+            <div class='bg-right'>
+                <div class='bg-inner'></div>
+            </div>
 
-{#    <div class="form">#}
-{#        <form method="POST" action="{% url 'upload_project' %}">#}
-{#            <div class="input-group">#}
-{#                {{ item.name.label }}#}
-{#                {{ item.name }}#}
-{#            </div>#}
-{##}
-{#            <div class="input-group">#}
-{#                {{ item.image_url.label }}#}
-{#                {{ item.image_url }}#}
-{#            </div>#}
-{##}
-{#            <div class="input-group">#}
-{#                {{ item.description.label }}#}
-{#                {{ item.description }}#}
-{#            </div>#}
-{##}
-{#            <div class="input-group">#}
-{#                {{ item.priority.label }}#}
-{#                {{ item.priority }}#}
-{#            </div>#}
-{##}
-{#            <div class="input-group">#}
-{#                {{ item.is_cured.label }}#}
-{#                {{ item.is_cured }}#}
-{#            </div>#}
-{#            {% csrf_token %}#}
-{#            <div class="input-group">#}
-{#                <input class="button primary" type="submit" value="Add">#}
-{#            </div>#}
-{#        </form>#}
-{#    </div>#}
+            <div class='bg'>
+                <div class='bg-inner'></div>
+            </div>
+
+            <div class='login_button_text'>ADD</div>
+
+        </button>
+    </form>
 {% endblock %}
 
 
