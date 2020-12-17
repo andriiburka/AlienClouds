@@ -18,16 +18,17 @@ header {
 .day {
     /*background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;*/
     /*background: linear-gradient(40deg, indigo, indigo, black, black, indigo, indigo ) fixed;*/
-    background: linear-gradient(20deg, indigo, darkslategray, indigo ) fixed;
-/*    background: url("../img/bg.jpg") fixed;*/
-/*    background-size: 50%;*/
-}
+    /*background: linear-gradient(20deg, indigo, darkslategray, indigo ) fixed;*/
 
+    /*background: linear-gradient(20deg, indigo, indigo, coral, darkslategray, indigo, indigo  ) fixed;*/
+    background: url("../img/bg.jpg") fixed;
+    background-size: 50%;
+}
 .night {
+
     /*background: linear-gradient(50rad, darkred, orangered, black, black, black) fixed;*/
     background: url("../img/bg.jpg") fixed;
     background-size: 50%;
-
 }
 
 .all_links {
