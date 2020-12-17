@@ -16,10 +16,11 @@ header {
 }
 
 .night {
-    background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;
+    /*background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;*/
     /*background: linear-gradient(40deg, indigo, indigo, black, black, indigo, indigo ) fixed;*/
     /*background: linear-gradient(20deg, indigo, darkslategray, indigo ) fixed;*/
-
+    background: url("../img/bg.jpg") fixed;
+    background-size: 50%;
 }
 
 .day {
