@@ -1,19 +1,16 @@
+<div class='control'>
+    {% if messages %}
+        {% for message in messages %}
+            <h4 class="error_messages sfprodisplay-white-shadow">{{ message }}</h4>
+        {% endfor %}
+    {% else %}
+        <h2 class="error_messages sfprodisplay-white-shadow">Regin</h2>
+    {% endif %}
+</div>
 
-<div class="contacts-cell" style="text-align: center">
+<div class="div-form">
     <form method="POST" action="" class='form'>
         {% csrf_token %}
-
-        <div class='control' style="text-align: center; padding-top: 15px">
-            <h2 class="h2-pink-shadow">Regin</h2>
-        </div>
-
-        {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
 
         <div class='control block-cube block-input'>
             {{ form.username }}
@@ -53,7 +50,7 @@
                 <div class='bg-inner'></div>
             </div>
         </div>
-
+        <p>Optional</p><br>
         <div class='control block-cube block-input'>
             {{ form.first_name }}
             <div class='bg-top'>
@@ -103,7 +100,7 @@
             <div class='bg'>
                 <div class='bg-inner'></div>
             </div>
-            <div class='login_button_text'>Register</div>
+            <div class='login_button_text'>DONE</div>
         </button>
         <br>
         <p class="subtitle">Already have an account? <a href='{% url 'login' %}'>Login</a></p>

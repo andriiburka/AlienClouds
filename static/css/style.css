@@ -15,11 +15,15 @@ header {
     width: 100%;
 }
 
-.day {
-    background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;
+.night {
+    /*background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;*/
+    background: linear-gradient(40deg, indigo, indigo, black, black, indigo, indigo ) fixed;
+    /*background: linear-gradient(20deg, indigo, darkslategray, indigo ) fixed;*/
+    background: url("../img/bg.jpg") fixed;
+    background-size: 50%;
 }
 
-.night {
+.day {
     /*background: linear-gradient(50rad, darkred, orangered, black, black, black) fixed;*/
     background: url("../img/bg.jpg") fixed;
     background-size: 50%;
@@ -177,12 +181,22 @@ body {
     padding: 10px;
 }
 
-.h2-pink-shadow {
+.sfprodisplay-pink-shadow {
     font-family: sf_pro_display-ultralight, Helvetica, sans-serif;
     text-shadow: 4px 0 4px black;
     line-height: 55px;
     text-align: center;
     color: #ff00dd;
+    /* DAY */
+    /*color: wheat;*/
+}
+
+.sfprodisplay-white-shadow {
+    font-family: sf_pro_display-ultralight, Helvetica, sans-serif;
+    text-shadow: 4px 0 4px black;
+    line-height: 55px;
+    text-align: center;
+    color: white;
     /* DAY */
     /*color: wheat;*/
 }
@@ -252,7 +266,7 @@ body {
 div.div-form {
     display: block;
     text-align: center;
-    padding: 10%;
+    padding: 3%;
 }
 
 form {
@@ -325,12 +339,12 @@ form {
     /*background: linear-gradient(90deg, rgb(157, 85, 82) 0%, rgb(48, 15, 88) 37%, rgb(183, 3, 234) 94%);*/
 
     /* WARNING LINE */
-    background: rgb(255, 248, 0);
-    background: linear-gradient(55deg, rgba(255, 248, 0, 1) 6%, rgba(0, 0, 0, 1) 7%, rgba(0, 0, 0, 1) 24%, rgba(255, 248, 0, 1) 25%, rgba(255, 248, 0, 1) 40%, rgba(0, 0, 0, 1) 41%, rgba(0, 0, 0, 1) 58%, rgba(255, 248, 0, 1) 59%, rgba(255, 248, 0, 1) 74%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 92%, rgba(255, 248, 0, 1) 93%);
+    /*background: rgb(255, 248, 0);*/
+    /*background: linear-gradient(55deg, rgba(255, 248, 0, 1) 6%, rgba(0, 0, 0, 1) 7%, rgba(0, 0, 0, 1) 24%, rgba(255, 248, 0, 1) 25%, rgba(255, 248, 0, 1) 40%, rgba(0, 0, 0, 1) 41%, rgba(0, 0, 0, 1) 58%, rgba(255, 248, 0, 1) 59%, rgba(255, 248, 0, 1) 74%, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 1) 92%, rgba(255, 248, 0, 1) 93%);*/
 
     /* gradient: purple - black */
     /*background: rgb(255, 187, 252);*/
-    /*background: linear-gradient(0deg, rgb(3, 3, 3) 0%, rgb(113, 33, 102) 100%);*/
+    background: linear-gradient(0deg, black 0%, indigo 100%);
 
 }
 

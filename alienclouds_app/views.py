@@ -1,18 +1,21 @@
 from django.shortcuts import render, redirect
-
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.models import User
 
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 
-from alienclouds_app.forms.projects import UploadForm
+from alienclouds_app.forms.projects import UploadItemForm, UploadProjectForm
 from alienclouds_app.forms.users import CreateUserForm
 from alienclouds_app.models import *
 
 
+#
+#
+#
+#
+#
 #  ███╗   ██╗  █████╗  ██╗   ██╗     ██████╗   █████╗  ██████╗
 #  ████╗  ██║ ██╔══██╗ ██║   ██║     ██╔══██╗ ██╔══██╗ ██╔══██╗
 #  ██╔██╗ ██║ ███████║ ██║   ██║     ██████╔╝ ███████║ ██████╔╝
@@ -44,21 +47,16 @@ class IndexListView(ListView):
         return context_dict
 
 
-def contacts(request):
-    alienclouds = '<iframe style="padding-top: 50px; text-align: center; width: 350px; height: 500px" src="https://discord.com/widget?id=780048729037340673&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>'
-    softuni_pythhon_path = '<iframe style="padding-top: 50px; text-align: center; width: 350px; height: 500px" src="https://discord.com/widget?id=699289734282739732&theme=dark" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>'
-    context = {
-        'title': 'Contacts | ALIENCLOUDS',
-        'discord_servers': [alienclouds, softuni_pythhon_path]
-    }
-    return render(request, 'pages/contacts.html', context)
-
-
+#
+#
+#
+#
+#
 #   █████╗  ██╗   ██╗ ████████╗ ██╗  ██╗
 #  ██╔══██╗ ██║   ██║ ╚══██╔══╝ ██║  ██║
 #  ███████║ ██║   ██║    ██║    ███████║
 #  ██╔══██║ ██║   ██║    ██║    ██╔══██║
-#  ██║  ██║ ╚██████╔╝    ██║    ██║  ██║
+#  ██║  ██║ ╚██████╔╝    ██║    ██║  ██║________________________________________________________________________________
 #  ╚═╝  ╚═╝  ╚═════╝     ╚═╝    ╚═╝  ╚═╝
 #
 def registerPage(request):
@@ -112,21 +110,32 @@ def logoutUser(request):
 
 #
 #
+#
+#
+#
 #  ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
 #  ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝██╔════╝
 #  ██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   ███████╗
 #  ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   ╚════██║
-#  ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   ███████║
+#  ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   ███████║___________________________________________________
 #  ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
 
+@login_required(login_url='login')
+def upload_project(request):
+    if request.method == 'GET':
+        context = {
+            'form': UploadProjectForm()
+        }
+        return render(request, '../templates/pages/upload_project.html', context)
 
-def all_projects(request):
+
+def projects(request):
     context = {
         'projects_title': 'Projects | ALIENCLOUDS',
         'projects': Project.objects.all(),
         'images': Project.image,
     }
-    return render(request, '../templates/pages/allprojects.html', context)
+    return render(request, '../templates/pages/projects.html', context)
 
 
 def project_details(request, pk):
@@ -136,10 +145,39 @@ def project_details(request, pk):
     return render(request, '../templates/pages/project_details.html', context)
 
 
+#
+#
+#
+#
+#
+#  ███████╗██╗  ██╗ ██████╗ ██████╗
+#  ██╔════╝██║  ██║██╔═══██╗██╔══██╗
+#  ███████╗███████║██║   ██║██████╔╝
+#  ╚════██║██╔══██║██║   ██║██╔═══╝
+#  ███████║██║  ██║╚██████╔╝██║_________________________________________________________________________________________
+#  ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝
+#
+
 @login_required(login_url='login')
-def upload_project(request):
+def upload_item(request):
     if request.method == 'GET':
         context = {
-            'upload_form': UploadForm(),
+            'upload_form': UploadItemForm()
         }
-        return render(request, '../templates/pages/upload_project.html', context)
+        return render(request, 'pages/upload_item.html', context)
+
+
+def shop(request):
+    context = {
+        'title': 'SHOP | ALIENCLOUDS',
+        'items': ShopItem.objects.all(),
+        'image': ShopItem.image,
+    }
+    return render(request, 'pages/shop.html', context)
+
+
+def item_details(request, pk):
+    context = {
+        'item': ShopItem.objects.get(pk=pk)
+    }
+    return render(request, 'pages/item_details.html', context)

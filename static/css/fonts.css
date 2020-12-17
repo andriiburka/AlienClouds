@@ -52,6 +52,19 @@
     color: wheat;
 }
 
+.error_messages {
+    padding-top: 20px;
+    font-family: sf_pro_display-ultralight, Helvetica, sans-serif;
+    font-size: 35px;
+    background: linear-gradient(40deg,
+    rgba(75, 0, 130, .01),
+    rgba(75, 0, 130, .01),
+    rgba(75, 0, 130, 1),
+    rgba(75, 0, 130, .01),
+    rgba(75, 0, 130, .01));
+    color: wheat;
+}
+
 html {
     /*font-family: sf_pro_rounded_ultralight, sans-serif;*/
 }

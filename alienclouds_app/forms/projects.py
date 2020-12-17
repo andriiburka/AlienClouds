@@ -1,9 +1,14 @@
 from django.forms import ModelForm
+from alienclouds_app.models import Project, ShopItem
 
-from alienclouds_app.models import Project
 
-
-class UploadForm(ModelForm):
+class UploadProjectForm(ModelForm):
     class Meta:
         model = Project
+        fields = '__all__'
+
+
+class UploadItemForm(ModelForm):
+    class Meta:
+        model = ShopItem
         fields = '__all__'

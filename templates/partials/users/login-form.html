@@ -1,23 +1,19 @@
+<div class='control'>
+    {% if messages %}
+        {% for message in messages %}
+            <h4 class="error_messages sfprodisplay-white-shadow">{{ message }}</h4>
+        {% endfor %}
+    {% else %}
+        <h2 class="error_messages sfprodisplay-white-shadow">Login</h2>
+    {% endif %}
+</div>
 
 <div class="div-form">
     <form method="POST" action="" autocomplete='off' class='form' id="login-form">
-    	{% csrf_token %}
-
-		<div class='control' style="text-align: center; padding-top: 15px">
-			{% if messages %}
-				{% for message in messages %}
-					<h4 style="line-height: 1;
-						   color: lightred;
-						   padding-left: 10px;
-						   " class="h2-pink-shadow">{{ message }}</h4>
-        		{% endfor %}
-			{% else %}
-        		<h2 class="h2-pink-shadow">Login</h2>
-			{% endif %}
-		</div>
+        {% csrf_token %}
 
         <div class='control block-cube block-input'>
-            <input name='username'type="text">
+            <input name='username' type="text">
             <div class='bg-top'>
                 <div class='bg-inner'></div>
             </div>

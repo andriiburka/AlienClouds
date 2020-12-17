@@ -1,0 +1,108 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% load tags %}
+
+{% block title %}{% endblock %}
+
+{% block section %}
+    <style>
+        .pic {
+            object-fit: cover;
+            width: 100%;
+            max-height: 350px;
+        }
+
+        .project_title {
+            font-family: sf_pro_display-ultralight, Helvetica, sans-serif;
+            font-size: 20px;
+            text-shadow: 2px 2px 2px black;
+            line-height: 55px;
+            text-align: center;
+            color: white;
+        }
+
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            line-height: normal;
+        }
+
+        .description_class {
+            vertical-align: bottom;
+            display: table-cell;
+
+            margin: 20px 30px;
+
+            border-top: rgba(0, 0, 0, .1) 5px solid;
+
+            overflow: hidden;
+            height: 15%;
+        {#background-color: green;#}{#height: 500px;#}
+            /*FLEX BOX */
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-flex-wrap: nowrap;
+            -ms-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            -webkit-align-content: stretch;
+            -ms-flex-line-pack: stretch;
+            align-content: stretch;
+            -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+            align-items: flex-start;
+        }
+
+        #description_id {
+            font-size: 12px;
+        {#background-color: rgba(0, 0, 0, .1);#} padding: 30px;
+
+            /*FLEX BOX CHILD */
+            -webkit-order: 0;
+            -ms-flex-order: 0;
+            order: 0;
+            -webkit-flex: 0 1 auto;
+            -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+            -webkit-align-self: flex-end;
+            -ms-flex-item-align: end;
+            align-self: flex-end;
+        }
+
+    </style>
+
+
+    <h2 class="sfprodisplay-white-shadow">ITEMS</h2>
+
+    <div class="allprojects_main_block" style="align-content: center">
+
+        <div><p class="project_title">{{ item.title }}</p></div>
+        {% for item in items %}
+            <div class="{% cycle 'even' 'odd' %}-project">
+                <div>
+                    <p class="project_title">{{ item.name | upper }}</p>
+                </div>
+
+                <a href="{% url 'item_details' item.id %}">
+                    <img class="pic" src="{{ item.image.url }}" alt="{{ item.name }}"></a>
+
+                <div class="description_class">
+                    <small id="description_id">{{ item.description }}</small>
+                </div>
+                <div>
+                    <h4 class="project_title">
+                        <a href="{% url 'item_details' item.id %}">Read more...</a>
+                    </h4>
+                </div>
+
+
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

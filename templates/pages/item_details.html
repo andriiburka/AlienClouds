@@ -1,0 +1,47 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block title %}
+    Details | ALIENCLOUDS
+{% endblock %}
+
+{% block section %}
+    <style>
+        .blog-div {
+            margin-left: 10%;
+            margin-right: 10%;
+            padding-top: 50px;
+            {#border: #ff253a 5px solid;#}
+        }
+        #blog-section-div p{
+            color: whitesmoke;
+        }
+        .image {
+            width: 70%;
+        }
+        h1 {
+            color: white
+        }
+
+    </style>
+
+
+    <div id="blog-section-div" class="blog-div">
+        <h1>{{ item.name }}</h1>
+        <img class="image" src="{{ item.image.url }}" alt="">
+        <h2>DESCRIPTION:</h2>
+        <p>{{ item.description }}</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+{% endblock %}
+
+

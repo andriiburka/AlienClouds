@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
     <link rel="stylesheet" href="{% static 'css/cube.css' %}">
-    <link rel="stylesheet" href="{% static 'css/projects_responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
     <link rel="stylesheet" href="{% static 'css/show_borders.css' %}">
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="{% static 'favicon/favicon.ico' %}" type="image/x-icon">
@@ -30,7 +30,8 @@
                 <a href="#search-modal" class="main-navbar__search-btn uk-icon-search" data-uk-modal></a>
                 <ul class="main-navbar__nav uk-hidden-small">
 
-                    <li><a href="{% url 'all_projects' %}">projects</a></li>
+                    <li><a href="{% url 'shop' %}">SHOP</a></li>
+                    <li><a href="{% url 'projects' %}">Projects</a></li>
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
 
                     {% if request.user.is_authenticated %}
@@ -107,7 +108,8 @@
                 <li><a href="{% url 'login' %}">LOGIN</a></li>
             {% endif %}
             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-            <li><a href="{% url 'all_projects' %}">PROJECTS</a></li>
+            <li><a href="{% url 'shop' %}">SHOP</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
         </ul>
     </div>
 </div>

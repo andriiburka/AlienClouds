@@ -1,22 +1,12 @@
 {% extends 'shared/base.html' %}
 {% load static %}
-<style></style>
+
+{% block title %}{{ login_title }}{% endblock %}
 
 {% block section %}
-
-    <div class="contacts-container">
-        {% block reg_form %}
             {% include 'partials/users/register_form.html' %}
-        {% endblock %}
-        {% block register_hints %}
-            {% include 'partials/users/register_hints.html' %}
-        {% endblock %}
-    </div>
-
 {% endblock %}
 
 {% block script %}
     <script src="{% static 'js/placeholders.js' %}"></script>
 {% endblock %}
-
-
