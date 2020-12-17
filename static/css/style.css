@@ -15,20 +15,33 @@ header {
     width: 100%;
 }
 
-.night {
+.day {
     /*background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;*/
     /*background: linear-gradient(40deg, indigo, indigo, black, black, indigo, indigo ) fixed;*/
-    /*background: linear-gradient(20deg, indigo, darkslategray, indigo ) fixed;*/
-    background: url("../img/bg.jpg") fixed;
-    background-size: 50%;
+    background: linear-gradient(20deg, indigo, darkslategray, indigo ) fixed;
+/*    background: url("../img/bg.jpg") fixed;*/
+/*    background-size: 50%;*/
 }
 
-.day {
+.night {
     /*background: linear-gradient(50rad, darkred, orangered, black, black, black) fixed;*/
     background: url("../img/bg.jpg") fixed;
     background-size: 50%;
 
 }
+
+.all_links {
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px black;
+    cursor: pointer;
+}
+.all_links:hover {
+    color: deeppink;
+    text-decoration: none;
+}
+
 
 body {
     margin-left: 0 !important;

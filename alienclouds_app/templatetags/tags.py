@@ -23,11 +23,11 @@ def bg_day_or_night(request):
 @register.simple_tag
 def welcome_message(request):
     if 6 < current_hour < 12:
-        msg = f'Good morning!\n{users}'
+        msg = f'Good morning!\n{users} users'
     elif 12 <= current_hour < 18:
-        msg = f'Good afternoon.\n{users}'
+        msg = f'Good afternoon.\n{users} users'
     elif 18 <= current_hour < 22:
-        msg = f'Good evening.\n{users}'
+        msg = f'Good evening.\n{users} users'
     else:
-        msg = f'Sleep Mode.\n{users} non-god users'
+        msg = f'Sleep Mode.\n{users} users'
     return msg
