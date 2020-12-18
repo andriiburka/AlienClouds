@@ -86,10 +86,15 @@
                     <small id="description_id">{{ item.description }}</small>
                 </div>
 
-                <div>
-                    <h4 class="sfprodisplay-white-shadow">
-                        <a class="uk-button" href="{% url 'item_details' item.id %}">Read more</a>
-                    </h4>
+                <div style="padding-left: 40px; padding-right: 30px; padding-top: 10px">
+                    {% if request.user.is_superuser %}
+                        <a class="color-user uk-button" href="{% url 'item_details' item.id %}">{{ price }} lv.</a>
+                        <a class="color-user uk-button" href="#">EDIT</a>
+                        <a class="color-user uk-button" href="#">DELETE</a>
+                    {% else %}
+                        <li><a class="color-user uk-button" href="{% url 'item_details' item.id %}">DETAILS</a>
+                        </li>
+                    {% endif %}
                 </div>
 
 

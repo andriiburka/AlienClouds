@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import ListView
@@ -7,6 +8,8 @@ from django.shortcuts import render
 from alienclouds_app.forms.projects import UploadItemForm, UploadProjectForm
 from alienclouds_app.forms.users import CreateUserForm
 from alienclouds_app.models import *
+
+
 #
 #
 #
@@ -42,6 +45,8 @@ class IndexListView(ListView):
         context_dict = super().get_context_data()
         context_dict['title'] = 'Class Title'
         return context_dict
+
+
 #
 #
 #
@@ -100,6 +105,8 @@ def loginPage(request):
 def logoutUser(request):
     logout(request)
     return redirect('login')
+
+
 #
 #
 #
@@ -133,19 +140,29 @@ def upload_project(request):
 
 
 def projects(request):
-    context = {
-        'projects_title': 'Projects | ALIENCLOUDS',
-        'projects': Project.objects.all(),
-        'images': Project.image,
-    }
-    return render(request, 'pages/projects.html', context)
+    if request.method == 'GET':
+        context = {
+            'projects_title': 'Projects | ALIENCLOUDS',
+            'projects': Project.objects.all(),
+        }
+        return render(request, 'pages/projects.html', context)
 
 
 def project_details(request, pk):
-    context = {
-        'project': Project.objects.get(pk=pk)
-    }
+    context = {'project': Project.objects.get(pk=pk), }
     return render(request, 'pages/project_details.html', context)
+
+
+def project_edit(request, pk):
+    context = {}
+    obj = get_object_or_404(Project, pk=pk)
+    form = UploadProjectForm(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(f'/project_details/{pk}/')
+
+    context["form"] = form
+    return render(request, "pages/project_edit.html", context)
 #
 #
 #

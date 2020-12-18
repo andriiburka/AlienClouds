@@ -85,10 +85,15 @@
                     <small id="description_id">{{ project.description }}</small>
                 </div>
 
-                <div>
-                    <h4 class="sfprodisplay-white-shadow">
-                        <a class="uk-button" href="{% url 'project_details' project.id %}">Read more</a>
-                    </h4>
+                <div style="padding-left: 40px; padding-right: 30px; padding-top: 10px">
+                    {% if request.user.is_superuser %}
+                        <a class="color-user uk-button" href="{% url 'project_details' project.id %}">DETAILS</a>
+                        <a class="color-user uk-button" href="{% url 'project_edit' project.id %}">EDIT</a>
+                        <a class="color-user uk-button" href="">DELETE</a>
+                    {% else %}
+                        <li><a class="color-user uk-button" href="{% url 'project_details' project.id %}">DETAILS</a>
+                        </li>
+                    {% endif %}
                 </div>
 
 
@@ -96,3 +101,4 @@
         {% endfor %}
     </div>
 {% endblock %}
+
