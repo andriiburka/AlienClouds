@@ -89,7 +89,7 @@
                     {% if request.user.is_superuser %}
                         <a class="color-user uk-button" href="{% url 'project_details' project.id %}">DETAILS</a>
                         <a class="color-user uk-button" href="{% url 'project_edit' project.id %}">EDIT</a>
-                        <a class="color-user uk-button" href="">DELETE</a>
+                        <a class="color-user uk-button" href="{% url 'project_delete' project.id %}">DELETE</a>
                     {% else %}
                         <li><a class="color-user uk-button" href="{% url 'project_details' project.id %}">DETAILS</a>
                         </li>
@@ -101,4 +101,3 @@
         {% endfor %}
     </div>
 {% endblock %}
-

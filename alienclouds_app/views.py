@@ -163,6 +163,16 @@ def project_edit(request, pk):
 
     context["form"] = form
     return render(request, "pages/project_edit.html", context)
+
+
+def project_delete(request, pk):
+    obj = get_object_or_404(Project, pk=pk)
+    if request.method == "POST":
+        obj.delete()
+        return redirect('projects')
+    return render(request, "pages/project_delete.html")
+
+
 #
 #
 #
@@ -200,3 +210,68 @@ def item_details(request, pk):
         'item': ShopItem.objects.get(pk=pk)
     }
     return render(request, 'pages/item_details.html', context)
+
+
+'''
+
+
+#  ██████╗ ██████╗  ██████╗      ██╗███████╗ ██████╗████████╗███████╗
+#  ██╔══██╗██╔══██╗██╔═══██╗     ██║██╔════╝██╔════╝╚══██╔══╝██╔════╝
+#  ██████╔╝██████╔╝██║   ██║     ██║█████╗  ██║        ██║   ███████╗
+#  ██╔═══╝ ██╔══██╗██║   ██║██   ██║██╔══╝  ██║        ██║   ╚════██║
+#  ██║     ██║  ██║╚██████╔╝╚█████╔╝███████╗╚██████╗   ██║   ███████║___________________________________________________
+#  ╚═╝     ╚═╝  ╚═╝ ╚═════╝  ╚════╝ ╚══════╝ ╚═════╝   ╚═╝   ╚══════╝
+
+
+@login_required(login_url='login')
+def upload_project(request):
+    if request.method == 'GET':
+        context = {
+            'form': UploadProjectForm()
+        }
+        return render(request, 'pages/upload_project.html', context)
+    else:
+        form = UploadProjectForm(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('projects')
+        context = {
+            'form': form,
+        }
+        return render(request, 'pages/upload_project.html', context)
+
+
+def projects(request):
+    if request.method == 'GET':
+        context = {
+            'projects_title': 'Projects | ALIENCLOUDS',
+            'projects': Project.objects.all(),
+        }
+        return render(request, 'pages/projects.html', context)
+
+
+def project_details(request, pk):
+    context = {'project': Project.objects.get(pk=pk), }
+    return render(request, 'pages/project_details.html', context)
+
+
+def project_edit(request, pk):
+    obj = get_object_or_404(Project, pk=pk)
+    form = UploadProjectForm(request.POST or None, instance=obj)
+    if form.is_valid():
+        form.save()
+        return HttpResponseRedirect(f'/project_details/{pk}/')
+    context = {'form': form, }
+    return render(request, "pages/project_edit.html", context)
+
+
+def project_delete(request, pk):
+    obj = get_object_or_404(Project, pk=pk)
+    if request.method == "POST":
+        obj.delete()
+        return redirect('projects')
+    return render(request, "pages/project_delete.html")
+
+
+'''

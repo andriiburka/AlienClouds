@@ -11,17 +11,46 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d2fb22e4-5c1a-4570-b8b4-2b8fe018d7e3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/alienclouds_app/migrations/0010_auto_20201217_2357.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pages/project_edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/logo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/pages/project_delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/0f79006f-6916-4264-8b4f-e3c1328111b2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/0f79006f-6916-4264-8b4f-e3c1328111b2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/alienclouds/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds_app/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds_app/migrations/0002_todo_bool.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds_app/migrations/0003_project.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds_app/migrations/0004_delete_todo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds_app/migrations/0005_auto_20201125_1719.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds_app/migrations/0006_project_project_main_image.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds_app/migrations/0007_delete_project.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds_app/migrations/0008_project.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds_app/migrations/0009_shopitem.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/alienclouds_app/migrations/0010_auto_20201217_2357.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/alienclouds_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/alienclouds_app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alienclouds_app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/alienclouds_app/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/alienclouds_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/alienclouds_app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/project_details.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/project_details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/media/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1087815.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/1087815_TuuOSkW.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/AlienHacker2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Apple-Watch-Review-aBlogtoWatch-Chapter-One-82.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Apple-Watch-wrist-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/CDJ2000NXSlimited.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/DJM-S11_prm_angle_200828_pc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Fluke_87_multimeter_PCB.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/Raspberry_Pi_4_Model_B_-_Side.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/cdj-1000-main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/cdj1000.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/cdj1000mk3newLife.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/confused-unga-bunga.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/games.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/games_P4q8r62.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/images/hexwave.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/project_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/project_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/projects.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/projects.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pages/upload_project.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/upload_project.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,28 +88,50 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/media" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/templates/pages" />
-      <recent name="$PROJECT_DIR$/templates/auth" />
-      <recent name="$PROJECT_DIR$/static/img" />
-      <recent name="$PROJECT_DIR$/alienclouds_app" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/media" />
       <recent name="$PROJECT_DIR$/templates/pages" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/projects_app/templatetags" />
       <recent name="$PROJECT_DIR$/templates/projects_app" />
-      <recent name="$PROJECT_DIR$/projects_app" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/media" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/templates/pages" />
+      <recent name="$PROJECT_DIR$/templates/auth" />
+      <recent name="$PROJECT_DIR$/static/img" />
     </key>
   </component>
   <component name="RunManager" selected="Django Server.AlienClouds">
+    <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="alienclouds" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/alienclouds_app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/alienclouds_app/models.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="AlienClouds" type="Python.DjangoServer" factoryName="Django server">
       <module name="alienclouds" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -140,12 +191,14 @@
     </configuration>
     <list>
       <item itemvalue="Django Server.AlienClouds" />
+      <item itemvalue="Python.models" />
       <item itemvalue="Shell Script.github_COMMIT_MASTER.sh" />
       <item itemvalue="Shell Script.github_CHOOSE_VERSION_TO REVERT.sh" />
       <item itemvalue="Shell Script.github_COMMIT_MASTER_FORCE.sh" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.models" />
         <item itemvalue="Shell Script.github_COMMIT_MASTER.sh" />
         <item itemvalue="Shell Script.github_COMMIT_MASTER_FORCE.sh" />
         <item itemvalue="Shell Script.github_CHOOSE_VERSION_TO REVERT.sh" />
@@ -177,7 +230,12 @@
       <workItem from="1608159542686" duration="1025000" />
       <workItem from="1608160709929" duration="11371000" />
       <workItem from="1608202399647" duration="5113000" />
-      <workItem from="1608245329155" duration="8387000" />
+      <workItem from="1608245329155" duration="8916000" />
+      <workItem from="1608319305875" duration="742000" />
+      <workItem from="1608321822653" duration="8963000" />
+      <workItem from="1608333383559" duration="211000" />
+      <workItem from="1608333716697" duration="160000" />
+      <workItem from="1608334413035" duration="2208000" />
     </task>
     <servers />
   </component>
@@ -226,49 +284,49 @@
     <state x="-1353" y="-2" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.-160.1920.1001/0.23.1280.777@-1920.-160.1920.1001" timestamp="1607537906207" />
     <state x="-1353" y="7" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.-160.1920.1057/0.23.1280.721@-1920.-160.1920.1057" timestamp="1607508228032" />
     <state x="378" y="137" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.-160.1920.1057/0.23.1280.721@0.23.1280.721" timestamp="1607502337901" />
-    <state width="1878" height="223" key="GridCell.Tab.0.bottom" timestamp="1608252425562">
+    <state width="1878" height="120" key="GridCell.Tab.0.bottom" timestamp="1608336821354">
       <screen x="-1920" y="-160" width="1920" height="1001" />
     </state>
-    <state width="1878" height="223" key="GridCell.Tab.0.bottom/-1920.-160.1920.1001/0.23.1280.777@-1920.-160.1920.1001" timestamp="1608252425562" />
-    <state width="1238" height="113" key="GridCell.Tab.0.bottom/-1920.-160.1920.1001/0.23.1280.777@0.23.1280.777" timestamp="1608244755287" />
+    <state width="1878" height="120" key="GridCell.Tab.0.bottom/-1920.-160.1920.1001/0.23.1280.777@-1920.-160.1920.1001" timestamp="1608336821354" />
+    <state width="1238" height="161" key="GridCell.Tab.0.bottom/-1920.-160.1920.1001/0.23.1280.777@0.23.1280.777" timestamp="1608326973947" />
     <state width="1878" height="223" key="GridCell.Tab.0.bottom/-1920.-160.1920.1057/0.23.1280.721@-1920.-160.1920.1057" timestamp="1608245928934" />
-    <state width="1238" height="191" key="GridCell.Tab.0.bottom/-1920.-160.1920.1057/0.23.1280.721@0.23.1280.721" timestamp="1608160489855" />
+    <state width="1238" height="161" key="GridCell.Tab.0.bottom/-1920.-160.1920.1057/0.23.1280.721@0.23.1280.721" timestamp="1608322882784" />
     <state width="1238" height="133" key="GridCell.Tab.0.bottom/-1920.-160.1920.1057/0.23.1280.724@0.23.1280.724" timestamp="1607525819155" />
     <state width="1238" height="205" key="GridCell.Tab.0.bottom/-1920.-160.1920.1057/0.23.1280.728@0.23.1280.728" timestamp="1607796799157" />
     <state width="1238" height="205" key="GridCell.Tab.0.bottom/-1920.-160.1920.1057/0.23.1280.729@0.23.1280.729" timestamp="1607796023322" />
     <state width="1878" height="332" key="GridCell.Tab.0.bottom/-1920.-160.1920.1057/0.23.1280.777@-1920.-160.1920.1057" timestamp="1608013662586" />
     <state width="1878" height="372" key="GridCell.Tab.0.bottom/-1920.-183.1920.1080/0.0.1280.800@-1920.-183.1920.1080" timestamp="1608060288934" />
-    <state width="1878" height="223" key="GridCell.Tab.0.center" timestamp="1608252425561">
+    <state width="1878" height="120" key="GridCell.Tab.0.center" timestamp="1608336821353">
       <screen x="-1920" y="-160" width="1920" height="1001" />
     </state>
-    <state width="1878" height="223" key="GridCell.Tab.0.center/-1920.-160.1920.1001/0.23.1280.777@-1920.-160.1920.1001" timestamp="1608252425561" />
-    <state width="1238" height="113" key="GridCell.Tab.0.center/-1920.-160.1920.1001/0.23.1280.777@0.23.1280.777" timestamp="1608244755283" />
+    <state width="1878" height="120" key="GridCell.Tab.0.center/-1920.-160.1920.1001/0.23.1280.777@-1920.-160.1920.1001" timestamp="1608336821353" />
+    <state width="1238" height="161" key="GridCell.Tab.0.center/-1920.-160.1920.1001/0.23.1280.777@0.23.1280.777" timestamp="1608326973945" />
     <state width="1878" height="223" key="GridCell.Tab.0.center/-1920.-160.1920.1057/0.23.1280.721@-1920.-160.1920.1057" timestamp="1608245928931" />
-    <state width="1238" height="191" key="GridCell.Tab.0.center/-1920.-160.1920.1057/0.23.1280.721@0.23.1280.721" timestamp="1608160489854" />
+    <state width="1238" height="161" key="GridCell.Tab.0.center/-1920.-160.1920.1057/0.23.1280.721@0.23.1280.721" timestamp="1608322882783" />
     <state width="1238" height="133" key="GridCell.Tab.0.center/-1920.-160.1920.1057/0.23.1280.724@0.23.1280.724" timestamp="1607525819154" />
     <state width="1238" height="205" key="GridCell.Tab.0.center/-1920.-160.1920.1057/0.23.1280.728@0.23.1280.728" timestamp="1607796799155" />
     <state width="1238" height="205" key="GridCell.Tab.0.center/-1920.-160.1920.1057/0.23.1280.729@0.23.1280.729" timestamp="1607796023321" />
     <state width="1878" height="332" key="GridCell.Tab.0.center/-1920.-160.1920.1057/0.23.1280.777@-1920.-160.1920.1057" timestamp="1608013662584" />
     <state width="1878" height="372" key="GridCell.Tab.0.center/-1920.-183.1920.1080/0.0.1280.800@-1920.-183.1920.1080" timestamp="1608060288932" />
-    <state width="1878" height="223" key="GridCell.Tab.0.left" timestamp="1608252425560">
+    <state width="1878" height="120" key="GridCell.Tab.0.left" timestamp="1608336821352">
       <screen x="-1920" y="-160" width="1920" height="1001" />
     </state>
-    <state width="1878" height="223" key="GridCell.Tab.0.left/-1920.-160.1920.1001/0.23.1280.777@-1920.-160.1920.1001" timestamp="1608252425560" />
-    <state width="1238" height="113" key="GridCell.Tab.0.left/-1920.-160.1920.1001/0.23.1280.777@0.23.1280.777" timestamp="1608244755281" />
+    <state width="1878" height="120" key="GridCell.Tab.0.left/-1920.-160.1920.1001/0.23.1280.777@-1920.-160.1920.1001" timestamp="1608336821352" />
+    <state width="1238" height="161" key="GridCell.Tab.0.left/-1920.-160.1920.1001/0.23.1280.777@0.23.1280.777" timestamp="1608326973944" />
     <state width="1878" height="223" key="GridCell.Tab.0.left/-1920.-160.1920.1057/0.23.1280.721@-1920.-160.1920.1057" timestamp="1608245928930" />
-    <state width="1238" height="191" key="GridCell.Tab.0.left/-1920.-160.1920.1057/0.23.1280.721@0.23.1280.721" timestamp="1608160489853" />
+    <state width="1238" height="161" key="GridCell.Tab.0.left/-1920.-160.1920.1057/0.23.1280.721@0.23.1280.721" timestamp="1608322882781" />
     <state width="1238" height="133" key="GridCell.Tab.0.left/-1920.-160.1920.1057/0.23.1280.724@0.23.1280.724" timestamp="1607525819153" />
     <state width="1238" height="205" key="GridCell.Tab.0.left/-1920.-160.1920.1057/0.23.1280.728@0.23.1280.728" timestamp="1607796799154" />
     <state width="1238" height="205" key="GridCell.Tab.0.left/-1920.-160.1920.1057/0.23.1280.729@0.23.1280.729" timestamp="1607796023320" />
     <state width="1878" height="332" key="GridCell.Tab.0.left/-1920.-160.1920.1057/0.23.1280.777@-1920.-160.1920.1057" timestamp="1608013662583" />
     <state width="1878" height="372" key="GridCell.Tab.0.left/-1920.-183.1920.1080/0.0.1280.800@-1920.-183.1920.1080" timestamp="1608060288931" />
-    <state width="1878" height="223" key="GridCell.Tab.0.right" timestamp="1608252425561">
+    <state width="1878" height="120" key="GridCell.Tab.0.right" timestamp="1608336821354">
       <screen x="-1920" y="-160" width="1920" height="1001" />
     </state>
-    <state width="1878" height="223" key="GridCell.Tab.0.right/-1920.-160.1920.1001/0.23.1280.777@-1920.-160.1920.1001" timestamp="1608252425561" />
-    <state width="1238" height="113" key="GridCell.Tab.0.right/-1920.-160.1920.1001/0.23.1280.777@0.23.1280.777" timestamp="1608244755286" />
+    <state width="1878" height="120" key="GridCell.Tab.0.right/-1920.-160.1920.1001/0.23.1280.777@-1920.-160.1920.1001" timestamp="1608336821354" />
+    <state width="1238" height="161" key="GridCell.Tab.0.right/-1920.-160.1920.1001/0.23.1280.777@0.23.1280.777" timestamp="1608326973946" />
     <state width="1878" height="223" key="GridCell.Tab.0.right/-1920.-160.1920.1057/0.23.1280.721@-1920.-160.1920.1057" timestamp="1608245928933" />
-    <state width="1238" height="191" key="GridCell.Tab.0.right/-1920.-160.1920.1057/0.23.1280.721@0.23.1280.721" timestamp="1608160489855" />
+    <state width="1238" height="161" key="GridCell.Tab.0.right/-1920.-160.1920.1057/0.23.1280.721@0.23.1280.721" timestamp="1608322882783" />
     <state width="1238" height="133" key="GridCell.Tab.0.right/-1920.-160.1920.1057/0.23.1280.724@0.23.1280.724" timestamp="1607525819155" />
     <state width="1238" height="205" key="GridCell.Tab.0.right/-1920.-160.1920.1057/0.23.1280.728@0.23.1280.728" timestamp="1607796799156" />
     <state width="1238" height="205" key="GridCell.Tab.0.right/-1920.-160.1920.1057/0.23.1280.729@0.23.1280.729" timestamp="1607796023321" />
@@ -296,6 +354,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/alienclouds$tags__1_.coverage" NAME="tags (1) Coverage Results" MODIFIED="1607835764562" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alienclouds_app/templatetags" />
+    <SUITE FILE_PATH="coverage/alienclouds$models.coverage" NAME="models Coverage Results" MODIFIED="1608334695055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/alienclouds_app" />
     <SUITE FILE_PATH="coverage/alienclouds$tags.coverage" NAME="tags Coverage Results" MODIFIED="1607558995176" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/projects_app/templatetags" />
   </component>
 </project>

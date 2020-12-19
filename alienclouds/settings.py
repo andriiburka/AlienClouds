@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'alienclouds_app',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -58,16 +59,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'alienclouds.wsgi.application'
 
+
 # HEROKU DATABASE
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'ec2-54-155-22-153.eu-west-1.compute.amazonaws.com',
-        'NAME': 'd37l92rsn6a85k',
-        'USER': 'sfpgjdismnvovo',
-        'PORT': '5432',
-        'PASSWORD': 'e263921e6fe92015e08868f2d699eeb69f59c5b4ee57b5482bf563bbe712efd2',
-    }
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'HOST': 'ec2-46-137-79-235.eu-west-1.compute.amazonaws.com',
+         'NAME': 'd6i4ak9a8aql2b',
+         'USER': 'bqytntsscuqftm',
+         'PORT': '5432',
+         'PASSWORD': '423c7ea3d6e174734d102065fd2e39c016c60069c55f34805a8697e221ccf7fb',
+     }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
