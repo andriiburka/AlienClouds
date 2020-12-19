@@ -22,7 +22,7 @@
     background: transparent;
     color: white;
     text-shadow: 3px 3px 3px black;
-    width: 100px;
+    width: 90px !important;
 }
 .uk-button:hover {
     background: indigo;

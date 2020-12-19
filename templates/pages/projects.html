@@ -85,7 +85,7 @@
                     <small id="description_id">{{ project.description }}</small>
                 </div>
 
-                <div style="padding-left: 40px; padding-right: 30px; padding-top: 10px">
+                <div style="text-align: center; padding-top: 10px">
                     {% if request.user.is_superuser %}
                         <a class="color-user uk-button" href="{% url 'project_details' project.id %}">DETAILS</a>
                         <a class="color-user uk-button" href="{% url 'project_edit' project.id %}">EDIT</a>
