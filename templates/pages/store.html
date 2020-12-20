@@ -1,10 +1,10 @@
-{% extends 'shared/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 {% load tags %}
 {% block title %}SHOP | ALIENCLOUDS{% endblock %}
 
 {% block section %}
-    <h2 class="sfprodisplay-white-shadow">Items</h2>
+    <h2 class="sfprodisplay-white-shadow">STORE</h2>
 
     <div class="allprojects_main_block">
         {% for item in items %}
@@ -21,7 +21,7 @@
 
                 <div class="button-details-edit-delete">
                     {% if request.user.is_superuser %}
-                        <a class="color-user uk-button" href="{% url 'item_details' item.id %}">{{ item.price }} BGN</a>
+                        <a class="color-user uk-button" href="">{{ item.price }} BGN</a>
                         <a class="color-user uk-button" href="{% url 'item_edit' item.id %}">EDIT</a>
                         <a class="color-user uk-button" href="{% url 'item_delete' item.id %}">DELETE</a>
                     {% else %}

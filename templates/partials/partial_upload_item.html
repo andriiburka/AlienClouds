@@ -1,19 +1,13 @@
-<div class='control'>
-    {% if messages %}
-        {% for message in messages %}
-            <h4 class="error_messages sfprodisplay-white-shadow">{{ message }}</h4>
-        {% endfor %}
-    {% else %}
-        <h2 class="error_messages sfprodisplay-white-shadow">Login</h2>
-    {% endif %}
-</div>
-
-<div class="div-form">
-    <form method="POST" action="" autocomplete='off' class='form' id="login-form">
+<div class="upload-your-awesome-project">
+    <form method="POST" action="" autocomplete='off' class='form' id="upload-form">
         {% csrf_token %}
 
+        <div class='control2' style="text-align: center; padding-top: 150px">
+            <h2 class="h2-pink-shadow">ITEMS</h2>
+        </div>
+
         <div class='control block-cube block-input'>
-            <input name='username' type="text">
+            <input name='TITLE' placeholder='TITLE' type='text'>
             <div class='bg-top'>
                 <div class='bg-inner'></div>
             </div>
@@ -26,7 +20,6 @@
         </div>
 
         <div class='control block-cube block-input'>
-            <input name='password' type="password">
             <div class='bg-top'>
                 <div class='bg-inner'></div>
             </div>
@@ -48,9 +41,15 @@
             <div class='bg'>
                 <div class='bg-inner'></div>
             </div>
-            <div class='login_button_text'>Bam!</div>
+            <div class='login_button_text'>ADD</div>
         </button>
-        <br>
-        <p class="subtitle">Don't have an account? <a href='{% url 'register' %}'>Register</a></p>
+
     </form>
 </div>
+
+
+<form method="POST" action="{% url 'upload_project' %}">
+    {{ form }}
+    {% csrf_token %}
+    <button>Create</button>
+</form>

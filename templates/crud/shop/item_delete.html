@@ -1,18 +1,4 @@
-{#{% extends 'shared/base.html' %}#}
-{##}
-{#{% block section %}#}
-{#    <div class="main">#}
-{#        <form method="POST">#}
-{#            {% csrf_token %}#}
-{#            Are you want to delete this item ?#}
-{#            <input type="submit" value="Yes"/>#}
-{#            <a href="/">Cancel </a>#}
-{#        </form>#}
-{#    </div>#}
-{#{% endblock %}#}
-
-
-{% extends 'shared/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}Deletetion | ALIENCLOUDS{% endblock %}
@@ -22,11 +8,11 @@
         <form method="POST" action="" autocomplete='off' class='form' id="upload-form">
             {% csrf_token %}
 
+            <img class="image" src="{{ project.image.url }}" alt="">
+
             <div class='control2' style="text-align: center; padding-top: 150px">
                 <h2 class="sfprodisplay-white-shadow">Delete Confirmation</h2>
             </div>
-
-{#            <img class="image" src="{{ project.image.url }}" alt="">#}
 
             <div>
                 <button class='btn block-cube block-cube-hover' type='submit'>

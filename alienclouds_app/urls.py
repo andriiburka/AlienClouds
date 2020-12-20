@@ -17,7 +17,7 @@ urlpatterns = (
     path('project_delete/<int:pk>/delete/', project_delete, name='project_delete'),  # delete
 
     path('upload_item/', upload_item, name='upload_item'),
-    path('items/', shop, name='shop'),
+    path('items/', store, name='store'),
     path('item_details/<int:pk>/', item_details, name='item_details'),
     path('item_edit/<int:pk>/edit/', item_edit, name='item_edit'),  # edit
     path('item_delete/<int:pk>/delete/', item_delete, name='item_delete'),  # delete

@@ -30,14 +30,14 @@
                 <a href="#main-offcanvas" class="main-navbar__mobile-btn uk-icon-bars uk-visible-small"
                    data-uk-offcanvas></a>
                 <a href="{% url 'index' %}" class="main-navbar__logo"><img src="{% static 'img/logo.png' %}" alt=""></a>
-{#                <a href="#search-modal" class="main-navbar__search-btn uk-icon-search" data-uk-modal></a>#}
+                {#                <a href="#search-modal" class="main-navbar__search-btn uk-icon-search" data-uk-modal></a>#}
                 <a href="" class="main-navbar__search-btn uk-icon-search" data-uk-modal></a>
                 <ul class="main-navbar__nav uk-hidden-small">
 
                     {% if request.user.is_authenticated %}
                         {% if user.is_superuser %}
                             <li><a class="color-user uk-button" href="{% url 'upload_project' %}">UPLOAD</a></li>
-                            <li><a class="color-user uk-button" href="{% url 'shop' %}">STORE</a></li>
+                            <li><a class="color-user uk-button" href="{% url 'store' %}">STORE</a></li>
                             <li><a class="color-user uk-button" href="{% url 'projects' %}">PROJECTS</a></li>
 
                             <li><a class="uk-icon-user color-user uk-button" href=" {% url 'admin:index' %}"> Admin </a>
@@ -46,13 +46,13 @@
                             <li><a class="uk-icon-sign-out color-user uk-button" href="{% url 'logout' %}"></a></li>
                         {% else %}
                             <li><a class="color-user uk-button" href="{% url 'upload_project' %}">UPLOAD</a></li>
-                            <li><a class="color-user uk-button" href="{% url 'shop' %}">STORE</a></li>
+                            <li><a class="color-user uk-button" href="{% url 'store' %}">STORE</a></li>
                             <li><a class="color-user uk-button" href="{% url 'projects' %}">PROJECTS</a></li>
                             <li><a class="uk-icon-user color-user uk-button" href="#"> {{ user }}</a></li>
                             <li><a class="uk-icon-sign-out color-user uk-button" href="{% url 'logout' %}"></a></li>
                         {% endif %}
                     {% else %}
-                        <li><a class="color-user uk-button" href="{% url 'shop' %}">STORE</a></li>
+                        <li><a class="color-user uk-button" href="{% url 'store' %}">STORE</a></li>
                         <li><a class="color-user uk-button" href="{% url 'projects' %}">PROJECTS</a></li>
                         <li><a class="color-user uk-button" href="{% url 'login' %}">LOGIN</a></li>
 
@@ -76,8 +76,10 @@
         <form action="" class="uk-form">
             <div class="uk-form-icon uk-width-1-1">
                 <i class="uk-icon-search"></i>
-                <input type="text" class="uk-width-1-1 uk-form-large" autofocus
-                       placeholder="What are you looking for?"/>
+                <label>
+                    <input type="text" class="uk-width-1-1 uk-form-large" autofocus
+                           placeholder="What are you looking for?"/>
+                </label>
             </div>
         </form>
     </div>
@@ -117,7 +119,7 @@
                 <li><a href="{% url 'login' %}">LOGIN</a></li>
             {% endif %}
             <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-            <li><a href="{% url 'shop' %}">STORE</a></li>
+            <li><a href="{% url 'store' %}">STORE</a></li>
             <li><a href="{% url 'projects' %}">Projects</a></li>
         </ul>
     </div>

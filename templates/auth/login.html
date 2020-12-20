@@ -1,10 +1,65 @@
-{% extends 'shared/base.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}{{ login_title }}{% endblock %}
 
 {% block section %}
-    {% include 'partials/users/login-form.html' %}
+    <div class='control'>
+        {% if messages %}
+            {% for message in messages %}
+                <h4 class="error_messages sfprodisplay-white-shadow">{{ message }}</h4>
+            {% endfor %}
+        {% else %}
+            <h2 class="error_messages sfprodisplay-white-shadow">Login</h2>
+        {% endif %}
+    </div>
+
+    <div class="div-form">
+        <form method="POST" action="" autocomplete='off' class='form' id="login-form">
+            {% csrf_token %}
+
+            <div class='control block-cube block-input'>
+                <input name='username' type="text">
+                <div class='bg-top'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg-right'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg'>
+                    <div class='bg-inner'></div>
+                </div>
+            </div>
+
+            <div class='control block-cube block-input'>
+                <input name='password' type="password">
+                <div class='bg-top'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg-right'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg'>
+                    <div class='bg-inner'></div>
+                </div>
+            </div>
+
+            <button class='btn block-cube block-cube-hover' type='submit'>
+                <div class='bg-top'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg-right'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='login_button_text'>Bam!</div>
+            </button>
+            <br>
+            <p class="subtitle">Don't have an account? <a href='{% url 'register' %}'>Register</a></p>
+        </form>
+    </div>
 {% endblock %}
 
 {% block script %}

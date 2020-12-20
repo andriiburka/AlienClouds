@@ -1,10 +1,8 @@
-from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
 from alienclouds_app.forms.projects import UploadItemForm, UploadProjectForm
 from alienclouds_app.forms.users import CreateUserForm
 from alienclouds_app.models import *
@@ -25,7 +23,7 @@ def index(request):
         'index_title': 'ALIENCLOUDS',
         'users': User.objects.all(),
         'count_users': User.objects.all().count(), }
-    return render(request, 'pages/index.html', context)
+    return render(request, 'index.html', context)
 
 
 class IndexListView(ListView):
@@ -117,7 +115,7 @@ def upload_project(request):
         context = {
             'form': UploadProjectForm()
         }
-        return render(request, 'pages/upload_project.html', context)
+        return render(request, 'crud/projects/upload_project.html', context)
     else:
         form = UploadProjectForm(request.POST, request.FILES)
 
@@ -127,7 +125,7 @@ def upload_project(request):
         context = {
             'form': form,
         }
-        return render(request, 'pages/upload_project.html', context)
+        return render(request, 'crud/projects/upload_project.html', context)
 
 
 def projects(request):
@@ -141,7 +139,7 @@ def projects(request):
 
 def project_details(request, pk):
     context = {'project': Project.objects.get(pk=pk), }
-    return render(request, 'pages/project_details.html', context)
+    return render(request, 'crud/projects/project_details.html', context)
 
 
 def project_edit(request, pk):
@@ -149,7 +147,7 @@ def project_edit(request, pk):
     if request.method == 'GET':
         context = {'form': UploadProjectForm(instance=project),
                    'project': project, }
-        return render(request, 'pages/project_edit.html', context)
+        return render(request, 'crud/projects/project_edit.html', context)
     else:
         form = UploadProjectForm(request.POST, request.FILES, instance=project)
         if form.is_valid():
@@ -157,7 +155,7 @@ def project_edit(request, pk):
             return redirect('projects')
         context = {'form': form,
                    'recipe': project, }
-        return render(request, 'pages/project_edit.html', context)
+        return render(request, 'crud/projects/project_edit.html', context)
 
 
 def project_delete(request, pk):
@@ -165,7 +163,7 @@ def project_delete(request, pk):
     if request.method == "POST":
         obj.delete()
         return redirect('projects')
-    return render(request, "pages/project_delete.html")
+    return render(request, "crud/projects/project_delete.html")
 
 
 '''
@@ -179,11 +177,11 @@ def project_delete(request, pk):
 '''
 
 
-def shop(request):
+def store(request):
     context = {'title': 'SHOP | ALIENCLOUDS',
                'items': ShopItem.objects.all(),
                'image': ShopItem.image, }
-    return render(request, 'pages/shop.html', context)
+    return render(request, 'pages/store.html', context)
 
 
 @login_required(login_url='login')
@@ -193,12 +191,12 @@ def upload_item(request):
             context = {
                 'upload_form': UploadItemForm()
             }
-            return render(request, 'pages/upload_item.html', context)
+            return render(request, 'crud/shop/upload_item.html', context)
 
 
 def item_details(request, pk):
     context = {'item': ShopItem.objects.get(pk=pk), }
-    return render(request, 'pages/item_details.html', context)
+    return render(request, 'crud/shop/item_details.html', context)
 
 
 def item_edit(request, pk):
@@ -206,7 +204,7 @@ def item_edit(request, pk):
     if request.method == 'GET':
         context = {'form': UploadItemForm(instance=item),
                    'item': item, }
-        return render(request, 'pages/item_edit.html', context)
+        return render(request, 'crud/shop/item_edit.html', context)
     else:
         form = UploadItemForm(request.POST, request.FILES, instance=item)
         if form.is_valid():
@@ -214,7 +212,7 @@ def item_edit(request, pk):
             return redirect('shop')
         context = {'form': form,
                    'recipe': item, }
-        return render(request, 'pages/item_edit.html', context)
+        return render(request, 'crud/shop/item_edit.html', context)
 
 
 def item_delete(request, pk):
@@ -222,4 +220,4 @@ def item_delete(request, pk):
     if request.method == "POST":
         obj.delete()
         return redirect('shop')
-    return render(request, "pages/item_delete.html")
+    return render(request, "crud/shop/item_delete.html")
