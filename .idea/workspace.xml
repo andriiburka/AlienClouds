@@ -94,7 +94,7 @@
       <recent name="$PROJECT_DIR$/templates/pages" />
     </key>
   </component>
-  <component name="RunManager" selected="Django Server.AlienClouds">
+  <component name="RunManager" selected="Shell Script.github_COMMIT_MASTER.sh">
     <configuration name="AlienClouds" type="Python.DjangoServer" factoryName="Django server">
       <module name="alienclouds" />
       <option name="INTERPRETER_OPTIONS" value="" />

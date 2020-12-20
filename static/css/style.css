@@ -52,6 +52,8 @@ a:hover {
     background: url("../img/bg.jpg") fixed;
     background-size: 50%;
 
+
+
     /*background: linear-gradient(40deg, #00008B, #00008B, purple, black, black) fixed;*/
     /*background: linear-gradient(40deg, indigo, indigo, black, black, indigo, indigo ) fixed;*/
     /*background: linear-gradient(20deg, indigo, darkslategray, indigo ) fixed;*/
@@ -60,7 +62,27 @@ a:hover {
 }
 
 .night {
-    background: linear-gradient(20deg, indigo, indigo, coral, darkslategray, indigo, indigo) fixed;
+    /* Color Theme Swatches in Hex */
+    .color-theme_games-1-hex { color: #8130F2; }
+    .color-theme_games-2-hex { color: #550CF2; }
+    .color-theme_games-3-hex { color: #492A8C; }
+    .color-theme_games-4-hex { color: #F2D022; }
+    .color-theme_games-5-hex { color: #F25252; }
+
+    /* Color Theme Swatches in RGBA */
+    .color-theme_games-1-rgba { color: rgba(129, 48, 242, 1); }
+    .color-theme_games-2-rgba { color: rgba(85, 12, 242, 1); }
+    .color-theme_games-3-rgba { color: rgba(73, 42, 140, 1); }
+    .color-theme_games-4-rgba { color: rgba(242, 208, 34, 1); }
+    .color-theme_games-5-rgba { color: rgba(242, 82, 82, 1); }
+
+    /* Color Theme Swatches in HSLA */
+    .color-theme_games-1-hsla { color: hsla(265, 88, 56, 1); }
+    .color-theme_games-2-hsla { color: hsla(259, 90, 49, 1); }
+    .color-theme_games-3-hsla { color: hsla(258, 53, 35, 1); }
+    .color-theme_games-4-hsla { color: hsla(50, 88, 54, 1); }
+    .color-theme_games-5-hsla { color: hsla(0, 86, 63, 1); }
+    /*background: linear-gradient(20deg, indigo, indigo, coral, darkslategray, indigo, indigo) fixed;*/
     /*background: linear-gradient(50rad, darkred, orangered, black, black, black) fixed;*/
     /*background: url("../img/bg.jpg") fixed;*/
     /*background-size: 50%;*/
