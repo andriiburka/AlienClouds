@@ -1,0 +1,61 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+
+{% block title %}Deletetion | ALIENCLOUDS{% endblock %}
+
+{% block section %}
+    <div class="upload-your-awesome-project">
+        <form method="POST" action="" autocomplete='off' class='form' id="upload-form">
+            {% csrf_token %}
+
+            <img class="image" src="{{ project.image.url }}" alt="">
+
+            <div class='control2' style="text-align: center; padding-top: 150px">
+                <h2 class="sfprodisplay-white-shadow">Delete Confirmation</h2>
+            </div>
+
+            <div>
+                <button class='btn block-cube block-cube-hover' type='submit'>
+                    <div class='bg-top'>
+                        <div class='bg-inner'></div>
+                    </div>
+                    <div class='bg-right'>
+                        <div class='bg-inner'></div>
+                    </div>
+                    <div class='bg'>
+                        <div class='bg-inner'></div>
+                    </div>
+                    <div class='login_button_text'>YES</div>
+                </button>
+            </div>
+            <br>
+            <div>
+                <button class='btn block-cube block-cube-hover'>
+                    <div class='bg-top'>
+                        <div class='bg-inner'></div>
+                    </div>
+
+                    <div class='bg-right'>
+                        <div class='bg-inner'></div>
+                    </div>
+
+                    <div class='bg'>
+                        <div class='bg-inner'></div>
+                    </div>
+                    <a href="{% url 'projects' %}">
+                        <div class='login_button_text'>NO</div>
+                    </a>
+                </button>
+            </div>
+        </form>
+    </div>
+{% endblock %}
+
+
+{% block script %}
+    <script src="{% static 'js/placeholders_upload.js' %}"></script>
+{% endblock %}
+
+
+{% block footer %}
+{% endblock %}

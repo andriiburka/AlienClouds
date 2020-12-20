@@ -1,11 +1,12 @@
-import os
 from pathlib import Path
 import django_heroku
+import environ
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'j&o0esgkr_3-mjs9g*gf0#ud+4-$!5n1q%!b7)*ki6p^vx9q_i'
 
 DEBUG = True
 
@@ -59,17 +60,21 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'alienclouds.wsgi.application'
 
+env = environ.Env()
+# reading .env file
+environ.Env.read_env()
 
-# HEROKU DATABASE
+# TUTORIAL: https://djangocentral.com/environment-variables-in-django/
+SECRET_KEY = env("SECRET_KEY")
 DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
-         'HOST': 'ec2-46-137-79-235.eu-west-1.compute.amazonaws.com',
-         'NAME': 'd6i4ak9a8aql2b',
-         'USER': 'bqytntsscuqftm',
-         'PORT': '5432',
-         'PASSWORD': '423c7ea3d6e174734d102065fd2e39c016c60069c55f34805a8697e221ccf7fb',
-     }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': env("DATABASE_NAME"),
+        'USER': env("DATABASE_USER"),
+        'PASSWORD': env("DATABASE_PASSWORD"),
+        'HOST': env("DATABASE_HOST"),
+        'PORT': env("DATABASE_PORT"),
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [

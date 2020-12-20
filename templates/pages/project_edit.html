@@ -1,11 +1,44 @@
 {% extends 'shared/base.html' %}
 {% block section %}
-    <div class="main">
-        <form method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
 
-            <input type="submit" value="Update">
-        </form>
+    <div class="main">
+        <div class="allprojects_main_block">
+
+            <div class="even-project" style="width:47%; height: 600px">
+                <div><p class="project_title">{{ project.title | upper }}</p></div>
+                {% if project.image %}
+                    <img style="object-fit: cover; height: 500px" src="{{ project.image.url }}"
+                         alt="{{ project.title }}">
+                {% endif %}
+            </div>
+
+            <div class="odd-project" style="width: 47%; height: 600px">
+                <div><p class="project_title">DESCRIPTION</p></div>
+                <div class="description_class">
+                    <small>{{ project.description }}</small>
+                </div>
+            </div>
+
+            <div class="even-project" style="width:94.8%; height: 600px">
+
+                {# EDIT #}
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <form ENCTYPE="multipart/form-data" method="POST">{% csrf_token %}
+                    {{ form.as_p }}
+
+                    <div style="display: inline-block">
+                        <input type="submit" value="Update">
+                        <a class="uk-button" href="{% url 'project_details' project.id %}">DISCARD</a>
+                    </div>
+                </form>
+                <br><br><br>
+
+            </div>
+        </div>
+
     </div>
 {% endblock %}

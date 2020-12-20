@@ -1,9 +1,6 @@
 from django.urls import path
 
-from alienclouds_app.views import index, IndexListView, project_edit, project_delete
-from alienclouds_app.views import item_details, project_details
-from alienclouds_app.views import registerPage, loginPage, logoutUser
-from alienclouds_app.views import shop, projects, upload_project, upload_item
+from alienclouds_app.views import *
 
 urlpatterns = (
     path('', index, name='index'),
@@ -20,6 +17,8 @@ urlpatterns = (
     path('project_delete/<int:pk>/delete/', project_delete, name='project_delete'),  # delete
 
     path('upload_item/', upload_item, name='upload_item'),
-    path('shop/', shop, name='shop'),
+    path('items/', shop, name='shop'),
     path('item_details/<int:pk>/', item_details, name='item_details'),
+    path('item_edit/<int:pk>/edit/', item_edit, name='item_edit'),  # edit
+    path('item_delete/<int:pk>/delete/', item_delete, name='item_delete'),  # delete
 )

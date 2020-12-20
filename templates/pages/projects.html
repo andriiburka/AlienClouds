@@ -2,102 +2,32 @@
 {% load static %}
 {% load tags %}
 {% block title %}{{ projects_title }}{% endblock %}
-{% block style %}
-    <style>
-        .pic {
-            object-fit: cover;
-            object-position: 0 0;
-            width: 100%;
-            min-height: 290px;
-            max-height: 290px;
-        }
-
-        .project_title {
-            font-family: sf_pro_display-ultralight, Helvetica, sans-serif;
-            font-size: 20px;
-            text-shadow: 2px 2px 2px black;
-            line-height: 55px;
-            text-align: center;
-            color: white;
-        }
-
-        span {
-            display: inline-block;
-            vertical-align: middle;
-            line-height: normal;
-        }
-
-        .description_class {
-            vertical-align: bottom;
-            display: table-cell;
-            margin: 0 40px;
-            border-top: rgba(0, 0, 0, .1) 5px solid;
-            overflow: hidden;
-            height: 135px;
-            display: -ms-flexbox;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-direction: column;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-flex-wrap: nowrap;
-            -ms-flex-wrap: nowrap;
-            flex-wrap: nowrap;
-            -webkit-justify-content: flex-start;
-            -ms-flex-pack: start;
-            justify-content: flex-start;
-            -webkit-align-content: stretch;
-            -ms-flex-line-pack: stretch;
-            align-content: stretch;
-            -webkit-align-items: flex-start;
-            -ms-flex-align: start;
-            align-items: flex-start;
-        }
-
-        #description_id {
-            font-size: 12px;
-            padding: 15px;
-            -webkit-order: 0;
-            -ms-flex-order: 0;
-            order: 0;
-            -webkit-flex: 0 1 auto;
-            -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
-            -webkit-align-self: flex-start;
-            -ms-flex-item-align: end;
-            align-self: flex-start;
-        }
-    </style>
-{% endblock %}
 
 {% block section %}
     <h2 class="sfprodisplay-white-shadow">PROJECTS</h2>
+
     <div class="allprojects_main_block">
-        {% for project in projects %}
+        {% for project in projects reversed %}
             <div class="{% cycle 'even' 'odd' %}-project">
-
                 <div><p class="project_title">{{ project.title | upper }}</p></div>
-
-                <a href="{% url 'project_details' project.id %}">
-                    <img class="pic" src="{{ project.image.url }}" alt="{{ project.title }}"></a>
-
+                {% if project.image %}
+                    <a href="{% url 'project_details' project.id %}">
+                        <img class="pic" src="{{ project.image.url }}" alt="{{ project.title }}"></a>
+                {% endif %}
                 <div class="description_class">
                     <small id="description_id">{{ project.description }}</small>
                 </div>
-
-                <div style="text-align: center; padding-top: 10px">
+                <div class="button-details-edit-delete">
                     {% if request.user.is_superuser %}
                         <a class="color-user uk-button" href="{% url 'project_details' project.id %}">DETAILS</a>
                         <a class="color-user uk-button" href="{% url 'project_edit' project.id %}">EDIT</a>
                         <a class="color-user uk-button" href="{% url 'project_delete' project.id %}">DELETE</a>
                     {% else %}
-                        <li><a class="color-user uk-button" href="{% url 'project_details' project.id %}">DETAILS</a>
-                        </li>
+                        <a class="color-user uk-button" href="{% url 'project_details' project.id %}">DETAILS</a>
                     {% endif %}
                 </div>
-
-
             </div>
         {% endfor %}
     </div>
+
 {% endblock %}

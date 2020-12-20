@@ -2,46 +2,35 @@
 {% load static %}
 
 {% block title %}
-    Details | ALIENCLOUDS
+    Item Details | ALIENCLOUDS
 {% endblock %}
 
 {% block section %}
-    <style>
-        .blog-div {
-            margin-left: 10%;
-            margin-right: 10%;
-            padding-top: 50px;
-            {#border: #ff253a 5px solid;#}
-        }
-        #blog-section-div p{
-            color: whitesmoke;
-        }
-        .image {
-            width: 70%;
-        }
-        h1 {
-            color: white
-        }
+    <div class="allprojects_main_block">
 
-    </style>
+        <div class="even-project" style="width:47%; height: 600px">
+            <div><p class="project_title">{{ item.name | upper }}</p></div>
+            {% if item.image %}
+                <img style="object-fit: cover; height: 500px" src="{{ item.image.url }}" alt="{{ item.title }}">
+            {% endif %}
+        </div>
 
+        <div class="odd-project" style="width: 47%; height: 600px">
 
-    <div id="blog-section-div" class="blog-div">
-        <h1>{{ item.name }}</h1>
-        <img class="image" src="{{ item.image.url }}" alt="">
-        <h2>DESCRIPTION:</h2>
-        <p>{{ item.description }}</p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+            <div><p class="project_title">DESCRIPTION</p></div>
+            <div class="description_class">
+                <small>{{ item.description }}</small>
+            </div>
+            <div class="button-details-edit-delete">
+                {% if request.user.is_superuser %}
+                    <a class="color-user uk-button" href="{% url 'item_details' item.id %}">{{ item.price }} BGN</a>
+                    <a class="color-user uk-button" href="{% url 'item_edit' item.id %}">EDIT</a>
+                    <a class="color-user uk-button" href="{% url 'item_delete' item.id %}">DELETE</a>
+                {% else %}
+                    <div><p class="project_title">PRICE: {{ item.price }} BGN</p></div>
+                {% endif %}
+            </div>
+        </div>
+
     </div>
 {% endblock %}
-
-

@@ -2,42 +2,35 @@
 {% load static %}
 
 {% block title %}
-    Details | AlienClouds
+    Project Details | AlienClouds
 {% endblock %}
 
 {% block section %}
-    <style>
-        .blog-div {
-            margin-left: 10%;
-            margin-right: 10%;
-            padding-top: 50px;
-            {#border: #ff253a 5px solid;#}
-        }
+    <div class="allprojects_main_block">
 
-        #blog-section-div p{
-            color: whitesmoke;
-        }
+        <div class="even-project" style="width:47%; height: 600px">
+            <div><p class="project_title">{{ project.title | upper }}</p></div>
+            {% if project.image %}
+                <img style="object-fit: cover; height: 500px" src="{{ project.image.url }}" alt="{{ project.title }}">
+            {% endif %}
+        </div>
 
-        .image {
-            width: 50%;
-        }
-    </style>
+        <div class="odd-project" style="width: 47%; height: 600px">
+            <div><p class="project_title">DESCRIPTION</p></div>
+            <div class="description_class">
+                <small>{{ project.description }}</small>
+            </div>
+            <div class="button-details-edit-delete">
+                {% if request.user.is_superuser %}
+                    <a class="color-user uk-button" href="{% url 'project_edit' project.id %}">EDIT</a>
+                    <a class="color-user uk-button" href="{% url 'project_delete' project.id %}">DELETE</a>
+                {% endif %}
+            </div>
+        </div>
 
-
-    <div id="blog-section-div" class="blog-div">
-        <h1 style="color: white">{{ project.title }}</h1>
-        <img class="image" src="{{ project.image.url }}" alt="">
-        <h2>DESCRIPTION:</h2>
-        <p>{{ project.description }}</p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
     </div>
 {% endblock %}
+
+
+
+

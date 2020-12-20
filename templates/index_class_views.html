@@ -11,6 +11,7 @@
         }
     </style>
 
+    <h1 class="sfprodisplay-white-shadow">ALL USERS</h1>
     <div id="index_class_view_div">
         {% for user in class_users %}
             <p>{% firstof user.get_short_name user.get_username %}</p>

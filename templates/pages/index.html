@@ -5,43 +5,12 @@
 {% block title %}{{ index_title }}{% endblock %}
 
 {% block section %}
-    <style>
-        .welcome-block {
-            text-align: center;
-            padding-top: 220px;
-            color: #096dcc;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .welcome-block h2 {
-            text-shadow: 2px 2px 4px blue;
-            line-height: 55px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            {#text-transform: uppercase;#}
-        }
-
-        a {
-            color: white;
-            text-decoration: none;
-            cursor: default;
-        }
-
-        a:hover {
-            color: white;
-            text-decoration: none;
-        }
-
-
-    </style>
-
-
     <div class="welcome-block">
-{#        <h2 class="base_title">{% welcome_message request %}</h2>#}
-        <div class="wrapper">
 
+{#        <img src="{% static 'img/logo2.png' %}" alt="">#}
+{#        <h2 class="base_title">{% welcome_message request %}</h2>#}
+
+        <div class="wrapper">
             <div class="cube">
                 <div class="side side--back">
                     <span class='dot'></span>
@@ -64,9 +33,6 @@
                 <h2 class="base_title">{% welcome_message request %}</h2>
             </div>
         </div>
-{#        <h2 class="base_title">Self made logo</h2>#}
-{#        <h2 class="base_title">Dynamic Cube Messages</h2>#}
-{#        <h2 class="base_title">Custom Error Messages</h2>#}
     </div>
 
 

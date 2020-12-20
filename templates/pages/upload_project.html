@@ -4,40 +4,99 @@
 {% block title %}User Profile | ALIENCLOUDS{% endblock %}
 
 {% block section %}
-    <form enctype="multipart/form-data" method="POST" action="{% url 'upload_project' %}">{% csrf_token %}
-        <h2 class="sfprodisplay-white-shadow">Have a project?</h2>
-        <div>
-            {{ form.title.label }}
-            {{ form.title }}
-        </div>
-        <br>
-        <div>
-            {{ form.image.label }}
-            {{ form.image }}
-        </div>
-        <br>
-        <div>
-            {{ form.description.label }}
-            {{ form.description }}
-        </div>
-        <br>
-        <button class='uk-button block-cube block-cube-hover' type='submit'>
-            <div class='bg-top'>
-                <div class='bg-inner'></div>
+    {#    <form enctype="multipart/form-data" method="POST" action="{% url 'upload_project' %}">{% csrf_token %}#}
+    {#        <h2 class="sfprodisplay-white-shadow">Have a project?</h2>#}
+    {#        <div>#}
+    {#            {{ form.title.label }}#}
+    {#            {{ form.title }}#}
+    {#        </div>#}
+    {#        <br>#}
+    {#        <div>#}
+    {#            {{ form.image.label }}#}
+    {#            {{ form.image }}#}
+    {#        </div>#}
+    {#        <br>#}
+    {#        <div>#}
+    {#            {{ form.description.label }}#}
+    {#            {{ form.description }}#}
+    {#        </div>#}
+    {#        <br>#}
+    {#        <button class='uk-button block-cube block-cube-hover' type='submit'>#}
+    {#            <div class='bg-top'>#}
+    {#                <div class='bg-inner'></div>#}
+    {#            </div>#}
+    {##}
+    {#            <div class='bg-right'>#}
+    {#                <div class='bg-inner'></div>#}
+    {#            </div>#}
+    {##}
+    {#            <div class='bg'>#}
+    {#                <div class='bg-inner'></div>#}
+    {#            </div>#}
+    {##}
+    {#            <div class='login_button_text'>ADD</div>#}
+    {##}
+    {#        </button>#}
+    {#    </form>#}
+
+
+
+
+
+
+    <div class="even-project" style="width:100%; height: 600px">
+
+        <form enctype="multipart/form-data" method="POST" action="{% url 'upload_project' %}">{% csrf_token %}
+            <h2 class="sfprodisplay-white-shadow">Have a project?</h2>
+            <div>
+                {{ form.title.label }}
+                {{ form.title }}
             </div>
-
-            <div class='bg-right'>
-                <div class='bg-inner'></div>
+            <br>
+            <div>
+                {{ form.image.label }}
+                {{ form.image }}
             </div>
-
-            <div class='bg'>
-                <div class='bg-inner'></div>
+            <br>
+            <div>
+                {{ form.description.label }}
+                {{ form.description }}
             </div>
+            <br>
+            <br>
 
-            <div class='login_button_text'>ADD</div>
 
-        </button>
-    </form>
+            <button class='uk-button block-cube block-cube-hover' type='submit'>
+                <div class='bg-top'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg-right'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='login_button_text'>ADD</div>
+            </button>
+
+            <button class='uk-button block-cube block-cube-hover'>
+                <div class='bg-top'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg-right'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='bg'>
+                    <div class='bg-inner'></div>
+                </div>
+                <div class='login_button_text'>
+                    <a href="{% url 'projects' %}">DISCARD</a>
+                </div>
+            </button>
+        </form>
+
+
+    </div>
 {% endblock %}
 
 
